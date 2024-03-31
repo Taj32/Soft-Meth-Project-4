@@ -16,13 +16,15 @@ public class HelloController {
     private Scene scene2;
     private Stage primaryStage;
     private Scene coffeeScene;
+    private Scene sandwichScene;
 
     // Method to initialize the scenes and stage
-    public void initScenesAndStage(Scene scene1, Scene scene2, Scene coffeeScene, Stage primaryStage) {
+    public void initScenesAndStage(Scene scene1, Scene scene2, Scene coffeeScene, Scene sandwichScene, Stage primaryStage) {
         this.scene1 = scene1;
         this.scene2 = scene2;
         this.coffeeScene = coffeeScene;
         this.primaryStage = primaryStage;
+        this.sandwichScene = sandwichScene;
     }
 
     @FXML
@@ -41,6 +43,14 @@ public class HelloController {
 
         // Switch scenes
         primaryStage.setScene(coffeeScene);
+    }
+
+    protected void moveToSandwichView() throws IOException {
+        // Change the welcome text
+        //welcomeText.setText("Welcome to JavaFX Application!");
+
+        // Switch scenes
+        primaryStage.setScene(sandwichScene);
     }
 
     @FXML
