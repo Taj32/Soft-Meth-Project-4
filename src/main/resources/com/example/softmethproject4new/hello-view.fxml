@@ -14,10 +14,6 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
     </padding>
 
-                <Label fx:id="welcomeText" alignment="CENTER" prefHeight="35.0" prefWidth="159.0" text="  RU CAFE  " textAlignment="CENTER" underline="true">
-      <font>
-         <Font size="24.0" />
-      </font></Label>
    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
       <children>
          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="201.0" prefWidth="216.0" text="order donuts">
@@ -29,7 +25,7 @@
                </ImageView>
             </graphic>
          </Button>
-         <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="169.0" prefWidth="262.0" text="order coffee">
+         <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#moveToCoffeeView" prefHeight="169.0" prefWidth="262.0" text="order coffee">
             <graphic>
                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                   <image>
