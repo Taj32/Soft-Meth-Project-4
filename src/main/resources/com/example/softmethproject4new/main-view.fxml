@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<BorderPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="example.demotableview.MainController">
+   <bottom>
+      <TextArea fx:id="output" editable="false" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <GridPane maxHeight="214.0" maxWidth="423.0" prefHeight="214.0" prefWidth="423.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="123.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <RadioButton fx:id="rb_basic" mnemonicParsing="false" onAction="#displaySelected" selected="true" text="basic">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="membership" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rb_family" mnemonicParsing="false" onAction="#displaySelected" text="family" toggleGroup="$membership">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="rb_premium" mnemonicParsing="false" onAction="#displaySelected" text="premium" toggleGroup="$membership">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <CheckBox fx:id="cb_sugar" mnemonicParsing="false" onAction="#checkSugar" text="sugar" />
+                  <CheckBox fx:id="cb_cream" mnemonicParsing="false" text="cream" />
+                  <CheckBox fx:id="cb_caramel" mnemonicParsing="false" text="caramel" />
+               </children>
+            </HBox>
+            <DatePicker fx:id="dp_dob" editable="false" onAction="#displayDate" prefHeight="25.0" prefWidth="120.0" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+   </center>
+   <top>
+      <TableView fx:id="tbv_contact" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="col_name" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="col_phone" prefWidth="111.0" text="Phone Number" />
+        </columns>
+      </TableView>
+   </top>
+</BorderPane>
