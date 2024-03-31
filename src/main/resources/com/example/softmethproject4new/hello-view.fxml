@@ -61,7 +61,7 @@
                </ImageView>
             </graphic>
          </Button>
-         <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="169.0" prefWidth="262.0" text="All Orders">
+         <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#moveToOrdersScene" prefHeight="169.0" prefWidth="262.0" text="All Orders">
             <graphic>
                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                   <image>
