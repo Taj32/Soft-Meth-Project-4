@@ -5,16 +5,39 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="400.0" prefWidth="400.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demonavigation.MainController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-    <Button contentDisplay="TOP" onAction="#displayView1" text="display View1">
-      <graphic>
-         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@rutgers.png" />
-            </image>
-         </ImageView>
-      </graphic></Button>
-</VBox>
+<BorderPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="example.demomorefx.MainController">
+   <top>
+      <Button fx:id="bt_donut" contentDisplay="TOP" mnemonicParsing="false" onAction="#switchImage" text="Donuts" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="30.0" />
+         </BorderPane.margin>
+         <graphic>
+            <ImageView fx:id="imv_donut" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@donuts.jpeg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </top>
+   <left>
+      <VBox BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="20.0" top="20.0" />
+         </BorderPane.margin>
+         <children>
+            <ComboBox fx:id="cmb_colors" onAction="#displayColor" prefWidth="150.0" promptText="select a color" />
+            <TextField fx:id="tf_color">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <ListView fx:id="lv_colors" onMouseClicked="#displayColorSelected" prefHeight="200.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets bottom="30.0" top="20.0" />
+               </VBox.margin>
+            </ListView>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
