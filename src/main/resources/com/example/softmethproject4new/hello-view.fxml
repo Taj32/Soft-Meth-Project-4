@@ -13,6 +13,11 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
     </padding>
+   <Label text="RU Coffee House" underline="true">
+      <font>
+         <Font name="System Bold" size="24.0" />
+      </font>
+   </Label>
 
    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
       <children>
@@ -34,7 +39,7 @@
                </ImageView>
             </graphic>
          </Button>
-         <Button contentDisplay="TOP" layoutX="226.0" layoutY="10.0" mnemonicParsing="false" prefHeight="169.0" prefWidth="262.0" text="order sandwich">
+         <Button contentDisplay="TOP" layoutX="226.0" layoutY="10.0" mnemonicParsing="false" onAction="#moveToSandwichView" prefHeight="169.0" prefWidth="262.0" text="order sandwich">
             <graphic>
                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                   <image>
@@ -47,7 +52,7 @@
    </HBox>
    <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
       <children>
-         <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="169.0" prefWidth="262.0" text="Current Order">
+         <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#moveToCartScene" prefHeight="169.0" prefWidth="262.0" text="Current Order">
             <graphic>
                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                   <image>

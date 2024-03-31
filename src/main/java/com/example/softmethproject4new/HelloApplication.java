@@ -12,6 +12,7 @@ public class HelloApplication extends Application {
     private Scene scene2;
     private Scene coffeeScene;
     private Scene sandwichScene;
+    private Scene currentScene;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -27,18 +28,24 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader4 = new FXMLLoader(HelloApplication.class.getResource("sandwich-view.fxml"));
         sandwichScene = new Scene(fxmlLoader4.load(), 700, 500);
 
+        FXMLLoader fxmlLoader5 = new FXMLLoader(HelloApplication.class.getResource("current-order-view.fxml"));
+        currentScene = new Scene(fxmlLoader5.load(), 700, 500);
+
         // Set the controller for the loaded FXML file and pass the scenes and stage to it
         HelloController controller = fxmlLoader1.getController();
-        controller.initScenesAndStage(scene1, scene2, coffeeScene, sandwichScene, stage);
+        controller.initScenesAndStage(scene1, scene2, coffeeScene, sandwichScene, currentScene, stage);
 
         HelloController controller2 = fxmlLoader2.getController();
-        controller2.initScenesAndStage(scene1, scene2, coffeeScene, sandwichScene, stage);
+        controller2.initScenesAndStage(scene1, scene2, coffeeScene, sandwichScene, currentScene, stage);
 
         HelloController controller3 = fxmlLoader3.getController();
-        controller3.initScenesAndStage(scene1, scene2, coffeeScene, sandwichScene, stage);
+        controller3.initScenesAndStage(scene1, scene2, coffeeScene, sandwichScene, currentScene, stage);
 
         HelloController controller4 = fxmlLoader4.getController();
-        controller4.initScenesAndStage(scene1, scene2, coffeeScene, sandwichScene, stage);
+        controller4.initScenesAndStage(scene1, scene2, coffeeScene, sandwichScene, currentScene, stage);
+
+        HelloController controller5 = fxmlLoader5.getController();
+        controller5.initScenesAndStage(scene1, scene2, coffeeScene, sandwichScene, currentScene, stage);
 
 
 
