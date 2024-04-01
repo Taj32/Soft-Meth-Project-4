@@ -19,7 +19,7 @@
             <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Order Donuts" textAlignment="CENTER" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="200.0">
                <children>
-                  <ComboBox prefWidth="150.0" promptText="donut type" />
+                  <ComboBox fx:id="cb_donutType" onAction="#displaySelected" prefWidth="150.0" promptText="donut type" />
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@donut.jpg" />
