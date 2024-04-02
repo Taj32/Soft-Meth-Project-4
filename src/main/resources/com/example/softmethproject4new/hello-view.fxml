@@ -9,67 +9,67 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="304.0" prefWidth="342.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.softmethproject4new.HelloController">
+<VBox alignment="CENTER" prefHeight="304.0" prefWidth="342.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.softmethproject4new.MainController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
     </padding>
-   <Label text="RU Coffee House" underline="true">
-      <font>
-         <Font name="System Bold" size="24.0" />
-      </font>
-   </Label>
+    <Label text="RU Coffee House" underline="true">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+    </Label>
 
-   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-      <children>
-         <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="201.0" prefWidth="216.0" text="order donuts">
-            <graphic>
-               <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@donut.jpg" />
-                  </image>
-               </ImageView>
-            </graphic>
-         </Button>
-         <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#moveToCoffeeView" prefHeight="169.0" prefWidth="262.0" text="order coffee">
-            <graphic>
-               <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@coffee.jpg" />
-                  </image>
-               </ImageView>
-            </graphic>
-         </Button>
-         <Button contentDisplay="TOP" layoutX="226.0" layoutY="10.0" mnemonicParsing="false" onAction="#moveToSandwichView" prefHeight="169.0" prefWidth="262.0" text="order sandwich">
-            <graphic>
-               <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@sandwich.jpg" />
-                  </image>
-               </ImageView>
-            </graphic>
-         </Button>
-      </children>
-   </HBox>
-   <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
-      <children>
-         <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#moveToCartScene" prefHeight="169.0" prefWidth="262.0" text="Current Order">
-            <graphic>
-               <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@cart.jpg" />
-                  </image>
-               </ImageView>
-            </graphic>
-         </Button>
-         <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#moveToOrdersScene" prefHeight="169.0" prefWidth="262.0" text="All Orders">
-            <graphic>
-               <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@reciept.png" />
-                  </image>
-               </ImageView>
-            </graphic>
-         </Button>
-      </children>
-   </HBox>
+    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+        <children>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#displayView1" prefHeight="201.0" prefWidth="216.0" text="order donuts">
+                <graphic>
+                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@donut.jpg" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="169.0" prefWidth="262.0" text="order coffee">
+                <graphic>
+                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@coffee.jpg" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" layoutX="226.0" layoutY="10.0" mnemonicParsing="false" prefHeight="169.0" prefWidth="262.0" text="order sandwich">
+                <graphic>
+                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@sandwich.jpg" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </children>
+    </HBox>
+    <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+        <children>
+            <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="169.0" prefWidth="262.0" text="Current Order">
+                <graphic>
+                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@cart.jpg" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="169.0" prefWidth="262.0" text="All Orders">
+                <graphic>
+                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@reciept.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </children>
+    </HBox>
 </VBox>
