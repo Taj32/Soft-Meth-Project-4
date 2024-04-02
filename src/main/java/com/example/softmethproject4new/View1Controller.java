@@ -5,12 +5,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+
+import java.util.Collections;
+import java.util.List;
 
 public class View1Controller {
     private MainController mainController;
@@ -45,20 +45,64 @@ public class View1Controller {
     private ObservableList<String> donutTypes;
     @FXML
     private ComboBox<String> cb_donutType;
-//    @FXML
-//    ListView<String> differentFlavors;
+    @FXML
+    private ComboBox<String> cb_quantity;
+    @FXML
+    ListView<String> differentFlavors;
+    @FXML
+    ListView<String> donutOrders;
+    private ObservableList<String> orderList = FXCollections.observableArrayList();
 
-    public void initialize(){
+    @FXML
+    private TextArea donutTotal;
+    private ObservableList<Donut> donutOrderList = FXCollections.observableArrayList();
 
-//        donutTypes = FXCollections.observableArrayList("Yeast","Cake","Donut Holes");
-//        cb_donutType.setItems(donutTypes);
 
-        cb_donutType.getItems().addAll("Yeast","Cake","Donut Holes");
-        //donutType.valueProperty().addListener((obs, oldVal, newVal) -> updateFlavors(newVal));
+
+    public void initialize() {
+
+        cb_donutType.getItems().addAll("Yeast", "Cake", "Donut Holes");
+        cb_quantity.getItems().addAll("1", "2", "3", "4", "5");
+
+        donutOrders.setItems(orderList);
+
+        cb_donutType.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
+            updateFlavors(newValue);
+        });
+
     }
 
-    public void displaySelected(ActionEvent event){
-        String selected = cb_donutType.getSelectionModel().getSelectedItem();
+    public void updateFlavors(String type){
+        List<String> flavors = Donut.typeOfFlavors(type);
+
+        ObservableList<String> obsFlavors = FXCollections.observableArrayList(flavors);
+        differentFlavors.setItems(obsFlavors);
+    }
+
+    public void donutOrder(ActionEvent event){
+        String flavor = differentFlavors.getSelectionModel().getSelectedItem();
+        String quantity = cb_quantity.getSelectionModel().getSelectedItem();
+        String type = cb_donutType.getSelectionModel().getSelectedItem();
+
+        if(flavor != null && quantity != null & type != null){
+            int amount = Integer.parseInt(quantity);
+            Donut order = new Donut(type,flavor,amount);
+
+            orderList.add(flavor+order.toString());
+
+            donutOrderList.add(order);
+            updateDonutTotal();
+
+        }
+
+    }
+
+    private void updateDonutTotal(){
+        double total = 0.0;
+        for(Donut donut: donutOrderList){
+            total += donut.price();
+        }
+        donutTotal.setText("$"+String.valueOf(total));
 
     }
 }
