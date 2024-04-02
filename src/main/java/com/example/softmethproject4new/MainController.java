@@ -27,6 +27,8 @@ public class MainController {
         primaryScene = scene;
     }
 
+
+
     /**
      * Event handler for the image button.
      * When the image button is clicked, a new window(stage) will be displayed.
