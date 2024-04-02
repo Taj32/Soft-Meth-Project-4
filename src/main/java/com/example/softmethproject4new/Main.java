@@ -8,13 +8,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    public Main() {
-    }
-
+    @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene((Parent)fxmlLoader.load(), 400.0, 400.0);
-        MainController mainController = (MainController)fxmlLoader.getController();
+        Scene scene = new Scene(fxmlLoader.load(), 400, 400);
+        MainController mainController = fxmlLoader.getController();
         mainController.setPrimaryStage(stage, scene);
         stage.setTitle("Demo - Navigation");
         stage.setScene(scene);
@@ -22,6 +20,6 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        launch(new String[0]);
+        launch();
     }
-}
+    }
