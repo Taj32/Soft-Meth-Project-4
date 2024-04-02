@@ -98,6 +98,25 @@ public class View1Controller {
         }
 
     }
+    public void removeDonutOrder(ActionEvent event) {
+        int selectedIndex = donutOrders.getSelectionModel().getSelectedIndex();
+        if (selectedIndex >= 0) {
+            // Remove the selected order from both lists
+            donutOrderList.remove(selectedIndex);
+            orderList.remove(selectedIndex);
+
+            // Update the total
+            updateDonutTotal();
+        } else {
+            // Optionally, display a message or handle the case when no order is selected
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("No Selection");
+            alert.setHeaderText(null);
+            alert.setContentText("Please select an order to remove.");
+            alert.showAndWait();
+        }
+
+    }
 
     private void updateDonutTotal() {
         double total = 0.0;

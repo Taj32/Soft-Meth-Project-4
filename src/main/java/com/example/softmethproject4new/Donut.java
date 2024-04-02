@@ -33,7 +33,7 @@ public class Donut extends MenuItem{
         double donut_price = switch(type){
             case "Yeast" -> 1.79;
             case "Cake" -> 1.89;
-            case "Donut Hole" -> 0.39;
+            case "Donut Holes" -> 0.39;
             default -> 0.00;
         };
 
