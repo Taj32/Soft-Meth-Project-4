@@ -40,4 +40,25 @@ public class View1Controller {
         this.primaryStage = primaryStage;
         this.primaryScene = primaryScene;
     }
+
+    @FXML
+    private ObservableList<String> donutTypes;
+    @FXML
+    private ComboBox<String> cb_donutType;
+//    @FXML
+//    ListView<String> differentFlavors;
+
+    public void initialize(){
+
+//        donutTypes = FXCollections.observableArrayList("Yeast","Cake","Donut Holes");
+//        cb_donutType.setItems(donutTypes);
+
+        cb_donutType.getItems().addAll("Yeast","Cake","Donut Holes");
+        //donutType.valueProperty().addListener((obs, oldVal, newVal) -> updateFlavors(newVal));
+    }
+
+    public void displaySelected(ActionEvent event){
+        String selected = cb_donutType.getSelectionModel().getSelectedItem();
+
+    }
 }
