@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,42 +13,43 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.softmethproject4new.View1Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.softmethproject4new.coffeeController">
     <children>
         <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="651.0" spacing="30.0">
             <children>
-                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Order Donuts" textAlignment="CENTER" />
-                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="200.0">
+                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Order Coffee" textAlignment="CENTER" />
+                <HBox alignment="CENTER" prefHeight="19.0" prefWidth="478.0" spacing="20.0">
                     <children>
-                        <ComboBox fx:id="cb_donutType" prefWidth="150.0" promptText="donut type" />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <Label prefHeight="17.0" prefWidth="33.0" text="size:" />
+                        <RadioButton mnemonicParsing="false" text="small" />
+                        <RadioButton layoutX="318.0" layoutY="77.0" mnemonicParsing="false" text="medium" />
+                        <RadioButton layoutX="133.0" layoutY="77.0" mnemonicParsing="false" text="Grande" />
+                        <RadioButton layoutX="220.0" layoutY="77.0" mnemonicParsing="false" text="Venti" />
+                        <ImageView fitHeight="116.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@donut.jpg" />
+                                <Image url="@coffee.jpg" />
                             </image>
                         </ImageView>
                     </children>
-                    <padding>
-                        <Insets left="100.0" />
-                    </padding>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
                     <children>
-                        <ListView fx:id="differentFlavors" prefHeight="200.0" prefWidth="200.0" />
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
                         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
                             <children>
-                                <ComboBox fx:id="cb_quantity" prefWidth="150.0" promptText="quantity" />
-                                <Button mnemonicParsing="false" onAction="#donutOrder" text="&gt;&gt;" />
+                                <ComboBox prefWidth="150.0" promptText="quantity" />
+                                <Button mnemonicParsing="false" text="&gt;&gt;" />
                                 <Button mnemonicParsing="false" text="&lt;&lt;" />
                             </children>
                         </VBox>
-                        <ListView fx:id="donutOrders" prefHeight="200.0" prefWidth="200.0" />
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
                     </children>
                 </HBox>
-                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                <HBox alignment="CENTER" prefHeight="20.0" prefWidth="611.0" spacing="50.0">
                     <children>
                         <Button mnemonicParsing="false" onAction="#returnToMain" text="Back" />
                         <Label prefHeight="18.0" prefWidth="70.0" text="Sub Total:" />
-                        <TextArea fx:id="donutTotal" editable="false" prefHeight="45.0" prefWidth="131.0" text="\$0.00" />
+                        <TextArea editable="false" prefHeight="45.0" prefWidth="131.0" text="\$0.00" />
                         <Button mnemonicParsing="false" text="add to Order" />
                     </children>
                     <padding>

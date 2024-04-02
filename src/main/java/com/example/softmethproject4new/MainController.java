@@ -27,6 +27,8 @@ public class MainController {
         primaryScene = scene;
     }
 
+
+
     /**
      * Event handler for the image button.
      * When the image button is clicked, a new window(stage) will be displayed.
@@ -57,6 +59,134 @@ public class MainController {
             view1controller.setMainController(this, view1, primaryStage, primaryScene);
         } catch (IOException e) {
             System.out.println(e.toString());
+//            Alert alert = new Alert(Alert.AlertType.ERROR);
+//            alert.setTitle("ERROR");
+//            alert.setHeaderText("Loading View1.fxml.");
+//            alert.setContentText("Couldn't load View1.fxml.");
+//            alert.showAndWait();
+        }
+    }
+
+    @FXML
+    protected void displayCoffeeView() {
+        Stage coffeeView = new Stage();
+        AnchorPane root;
+        try { //it is possible to have an IOException because of the errors in the fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("coffee-view.fxml"));
+            root = (AnchorPane) loader.load(); //type-cast to the data type of the root node
+            Scene scene = new Scene(root, 500, 400);
+            //view1.setScene(scene); //if you want to use the new window to display the new scene
+            //view1.setTitle("view1");
+            //view1.show();
+            primaryStage.setScene(scene); //use the primary stage to display the new scene graph
+            coffeeController cofController = loader.getController();
+
+            /*
+              The statement below is to pass the reference of the MainController object
+              to the View1Controller object so the View1Controller can call the
+              public methods in the MainController.
+             */
+            cofController.setMainController(this, coffeeView, primaryStage, primaryScene);
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            System.out.println(e.toString());
+            alert.setTitle("ERROR");
+//            Alert alert = new Alert(Alert.AlertType.ERROR);
+//            alert.setTitle("ERROR");
+//            alert.setHeaderText("Loading View1.fxml.");
+//            alert.setContentText("Couldn't load View1.fxml.");
+//            alert.showAndWait();
+        }
+    }
+
+    @FXML
+    protected void displaySandwichView() {
+        Stage sandwichView = new Stage();
+        AnchorPane root;
+        try { //it is possible to have an IOException because of the errors in the fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("sandwich-view.fxml"));
+            root = (AnchorPane) loader.load(); //type-cast to the data type of the root node
+            Scene scene = new Scene(root, 500, 400);
+            //view1.setScene(scene); //if you want to use the new window to display the new scene
+            //view1.setTitle("view1");
+            //view1.show();
+            primaryStage.setScene(scene); //use the primary stage to display the new scene graph
+            SandwichController sandwichController = loader.getController();
+
+            /*
+              The statement below is to pass the reference of the MainController object
+              to the View1Controller object so the View1Controller can call the
+              public methods in the MainController.
+             */
+            sandwichController.setMainController(this, sandwichView, primaryStage, primaryScene);
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            System.out.println(e.toString());
+            alert.setTitle("ERROR");
+//            Alert alert = new Alert(Alert.AlertType.ERROR);
+//            alert.setTitle("ERROR");
+//            alert.setHeaderText("Loading View1.fxml.");
+//            alert.setContentText("Couldn't load View1.fxml.");
+//            alert.showAndWait();
+        }
+    }
+
+    @FXML
+    protected void displayCurrentOrderView() {
+        Stage currentOrderView = new Stage();
+        AnchorPane root;
+        try { //it is possible to have an IOException because of the errors in the fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("current-order-view.fxml"));
+            root = (AnchorPane) loader.load(); //type-cast to the data type of the root node
+            Scene scene = new Scene(root, 500, 400);
+            //view1.setScene(scene); //if you want to use the new window to display the new scene
+            //view1.setTitle("view1");
+            //view1.show();
+            primaryStage.setScene(scene); //use the primary stage to display the new scene graph
+            CurrentOrderController currentOrderController = loader.getController();
+
+            /*
+              The statement below is to pass the reference of the MainController object
+              to the View1Controller object so the View1Controller can call the
+              public methods in the MainController.
+             */
+            currentOrderController.setMainController(this, currentOrderView, primaryStage, primaryScene);
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            System.out.println(e.toString());
+            alert.setTitle("ERROR");
+//            Alert alert = new Alert(Alert.AlertType.ERROR);
+//            alert.setTitle("ERROR");
+//            alert.setHeaderText("Loading View1.fxml.");
+//            alert.setContentText("Couldn't load View1.fxml.");
+//            alert.showAndWait();
+        }
+    }
+
+    @FXML
+    protected void displayAllOrdersView() {
+        Stage allOrdersView = new Stage();
+        AnchorPane root;
+        try { //it is possible to have an IOException because of the errors in the fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("all-orders-view.fxml"));
+            root = (AnchorPane) loader.load(); //type-cast to the data type of the root node
+            Scene scene = new Scene(root, 500, 400);
+            //view1.setScene(scene); //if you want to use the new window to display the new scene
+            //view1.setTitle("view1");
+            //view1.show();
+            primaryStage.setScene(scene); //use the primary stage to display the new scene graph
+            AllOrdersController allOrdersController = loader.getController();
+
+            /*
+              The statement below is to pass the reference of the MainController object
+              to the View1Controller object so the View1Controller can call the
+              public methods in the MainController.
+             */
+            allOrdersController.setMainController(this, allOrdersView, primaryStage, primaryScene);
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            System.out.println(e.toString());
+            alert.setTitle("ERROR");
 //            Alert alert = new Alert(Alert.AlertType.ERROR);
 //            alert.setTitle("ERROR");
 //            alert.setHeaderText("Loading View1.fxml.");
