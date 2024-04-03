@@ -162,6 +162,8 @@ public class MainController {
               public methods in the MainController.
              */
             currentOrderController.setMainController(this, currentOrderView, primaryStage, primaryScene);
+            currentOrderController.populateTable();
+
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             System.out.println(e.toString());

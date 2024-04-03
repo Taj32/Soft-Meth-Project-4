@@ -1,5 +1,7 @@
 package com.example.softmethproject4new;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,27 +17,55 @@ public class CurrentOrderController {
     private Stage stage;
     private Scene primaryScene;
     private Stage primaryStage;
-    private ObservableList<String> colorList;
-    private ObservableList<String> fruitList;
+    private ObservableList<String> observableList1;
+    private ObservableList<String> observableList2;
+
     @FXML
-    private Label value;
+    TableView table;
+
     @FXML
-    private Label color;
-    @FXML
-    private ComboBox<String> cmb_color;
-    @FXML
-    private ListView<String> listview;
-    @FXML
-    private Button menuButton;
+    TableColumn<MenuItem, String> item, price;
+
 
     public void setMainController (MainController controller,
                                    Stage stage,
                                    Stage primaryStage,
                                    Scene primaryScene) {
-        mainController = controller;
+        System.out.println("running this part..");
+        this.mainController = controller;
         this.stage = stage;
         this.primaryStage = primaryStage;
         this.primaryScene = primaryScene;
+    }
+
+    public void populateTable() {
+
+        ObservableList<MenuItem> currentOrder = FXCollections.observableArrayList();//write code to read from the file.
+
+        //for(MenuItem element : mainController.getCart()) {
+        //    System.out.println(element);
+        //}
+        if(mainController == null) {
+            System.out.println("controller is null");
+        }
+        else {
+            System.out.println(mainController.getCart().get(0).price());
+        }
+
+        for(MenuItem element : mainController.getCart()) {
+            currentOrder.add(element);
+        }
+
+        table.setItems(currentOrder);
+        item.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().toString()));
+        price.setCellValueFactory(cellData -> new SimpleStringProperty(  Double.toString(cellData.getValue().price()  )   ) );
+
+
+
+
+
+        //currentOrder.setItems(observableList);
+
     }
 
     @FXML
@@ -51,13 +81,13 @@ public class CurrentOrderController {
             //view1.show();
             primaryStage.setScene(scene); //use the primary stage to display the new scene graph
             MainController newMainController = loader.getController();
+            newMainController.setPrimaryStage(this.primaryStage, this.primaryScene, mainController.getCart());
 
             /*
               The statement below is to pass the reference of the MainController object
               to the View1Controller object so the View1Controller can call the
               public methods in the MainController.
              */
-            newMainController.setPrimaryStage(primaryStage, primaryScene);
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             System.out.println(e.toString());

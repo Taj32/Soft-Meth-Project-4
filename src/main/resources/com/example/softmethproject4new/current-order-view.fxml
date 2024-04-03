@@ -15,10 +15,10 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.softmethproject4new.CurrentOrderController">
     <children>
-        <TableView layoutX="100.0" layoutY="41.0" prefHeight="311.0" prefWidth="220.0">
+        <TableView fx:id="table" layoutX="100.0" layoutY="41.0" prefHeight="311.0" prefWidth="220.0">
             <columns>
-                <TableColumn prefWidth="109.33334350585938" text="Items" />
-                <TableColumn minWidth="0.0" prefWidth="109.33331298828125" text="Cost" />
+                <TableColumn fx:id="item" prefWidth="109.33334350585938" text="Items" />
+                <TableColumn fx:id="price" minWidth="0.0" prefWidth="109.33331298828125" text="Cost" />
             </columns>
         </TableView>
         <VBox alignment="TOP_CENTER" layoutX="359.0" layoutY="97.0" prefHeight="233.0" prefWidth="205.0" spacing="20.0">
