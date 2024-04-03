@@ -47,4 +47,12 @@ public class Donut extends MenuItem{
 
         return "("+amount+")";
     }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public String getFlavor() {
+        return this.type;
+    }
 }

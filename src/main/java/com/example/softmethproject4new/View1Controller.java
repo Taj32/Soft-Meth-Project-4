@@ -121,13 +121,13 @@ public class View1Controller {
             //view1.show();
             primaryStage.setScene(scene); //use the primary stage to display the new scene graph
             MainController newMainController = loader.getController();
+            newMainController.setPrimaryStage(this.primaryStage, this.primaryScene, mainController.getCart());
 
             /*
               The statement below is to pass the reference of the MainController object
               to the View1Controller object so the View1Controller can call the
               public methods in the MainController.
              */
-            newMainController.setPrimaryStage(primaryStage, primaryScene);
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             System.out.println(e.toString());
@@ -138,5 +138,16 @@ public class View1Controller {
 //            alert.setContentText("Couldn't load View1.fxml.");
 //            alert.showAndWait();
         }
+    }
+
+    @FXML
+    protected void addDonuts() {
+        if(!donutOrderList.isEmpty()) {
+            for(Donut individualDonut : donutOrderList) {
+                System.out.println(individualDonut.getFlavor());
+                mainController.addToCart(individualDonut);
+            }
+        }
+
     }
 }

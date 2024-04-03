@@ -220,9 +220,9 @@ public class MainController {
     }
 
     public void addToCart(MenuItem currentItem) {
-        System.out.println(cart);
+        System.out.println("Cart Before: " + cart);
         cart.add(currentItem);
-        System.out.println(cart);
+        System.out.println("Cart After: " + cart);
     }
 
     public ArrayList<MenuItem> getCart() {

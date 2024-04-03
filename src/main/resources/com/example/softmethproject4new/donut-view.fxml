@@ -48,7 +48,7 @@
                         <Button mnemonicParsing="false" onAction="#returnToMain" text="Back" />
                         <Label prefHeight="18.0" prefWidth="70.0" text="Sub Total:" />
                         <TextArea fx:id="donutTotal" editable="false" prefHeight="45.0" prefWidth="131.0" text="\$0.00" />
-                        <Button mnemonicParsing="false" text="add to Order" />
+                        <Button mnemonicParsing="false" onAction="#addDonuts" text="add to Order" />
                     </children>
                     <padding>
                         <Insets left="20.0" right="20.0" />
