@@ -86,7 +86,7 @@ public class View1Controller {
         String quantity = cb_quantity.getSelectionModel().getSelectedItem();
         String type = cb_donutType.getSelectionModel().getSelectedItem();
 
-        if (flavor != null && quantity != null & type != null) {
+        if (flavor != null && quantity != null && type != null) {
             int amount = Integer.parseInt(quantity);
             Donut order = new Donut(type, flavor, amount);
 

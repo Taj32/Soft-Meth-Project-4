@@ -1,6 +1,7 @@
 package com.example.softmethproject4new;
 
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,6 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class coffeeController {
     private MainController mainController;
@@ -28,6 +30,18 @@ public class coffeeController {
     @FXML
     private Button menuButton;
 
+    @FXML
+    private ComboBox<String> cb_size;
+    @FXML
+    private ComboBox<String> cb_quantity;
+
+    @FXML
+    private TextArea coffeePrice;
+
+    private ArrayList<String> addins;
+
+    private Coffee currentCoffee;
+
 
 
     public void setMainController (MainController controller,
@@ -38,6 +52,70 @@ public class coffeeController {
         this.stage = stage;
         this.primaryStage = primaryStage;
         this.primaryScene = primaryScene;
+    }
+
+
+    public void initialize() {
+
+        cb_size.getItems().addAll("Short", "Tall", "Grande", "Venti");
+        cb_quantity.getItems().addAll("1", "2", "3", "4", "5");
+        addins = new ArrayList<>();
+
+
+        //donutOrders.setItems(orderList);
+
+        //cb_donutType.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
+        //    updateFlavors(newValue);
+        //});
+
+    }
+
+    public void coffeeOrder(ActionEvent event) {
+        String size = cb_size.getSelectionModel().getSelectedItem();
+        String quantity = cb_quantity.getSelectionModel().getSelectedItem();
+
+        if(size != null && quantity != null) {
+            //calculate the cost
+            int amount = Integer.parseInt(quantity);
+            currentCoffee = new Coffee(size, amount, addins);
+            updateCoffeeTotal();
+
+        }
+
+        System.out.println(size);
+    }
+
+    private void updateCoffeeTotal() {
+        coffeePrice.setText("$" + currentCoffee.price());
+    }
+
+    @FXML
+    public void changeAddOns(ActionEvent event) {
+        //RadioButton bread = (RadioButton) breadType.getSelectedToggle();
+        //RadioButton protein = (RadioButton) proteinType.getSelectedToggle();
+        CheckBox currentCheckBox = (CheckBox) event.getSource();
+        if(!addins.contains(currentCheckBox.getText())) {
+            // Add on has not been selected
+            addins.add(currentCheckBox.getText());
+            System.out.println("selecting..");
+        }
+        else {
+            // Add on list already contains checkbox
+            // so remove it since we're deselecting...
+            addins.remove(currentCheckBox.getText());
+            System.out.println("deselecting...");
+        }
+
+        String size = cb_size.getSelectionModel().getSelectedItem();
+        String quantity = cb_quantity.getSelectionModel().getSelectedItem();
+
+        if(size != null && quantity != null) {
+            int amount = Integer.parseInt(quantity);
+            currentCoffee = new Coffee(size, amount, addins);
+            updateCoffeeTotal();
+        }
+
+
     }
 
     @FXML
