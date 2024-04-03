@@ -3,6 +3,7 @@ package com.example.softmethproject4new;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -55,12 +56,10 @@ public class CurrentOrderController {
         //for(MenuItem element : mainController.getCart()) {
         //    System.out.println(element);
         //}
-        if(mainController == null) {
-            System.out.println("controller is null");
+        if(mainController.getCart() == null) {
+            return;
         }
-        else {
-            System.out.println(mainController.getCart().get(0).price());
-        }
+
 
         for(MenuItem element : mainController.getCart()) {
             currentOrder.add(element);
@@ -78,6 +77,20 @@ public class CurrentOrderController {
 
         //currentOrder.setItems(observableList);
 
+    }
+
+    public void removeOrders(ActionEvent event) {
+        System.out.println(table.getSelectionModel().getSelectedItem());
+        MenuItem selectedItem = (MenuItem) table.getSelectionModel().getSelectedItem();
+
+        for(MenuItem element : mainController.getCart()) {
+            if(selectedItem.equals(element)) {
+                mainController.getCart().remove(selectedItem);
+                break;
+            }
+        }
+
+        populateTable();
     }
 
     private void updateOrderTotals() {

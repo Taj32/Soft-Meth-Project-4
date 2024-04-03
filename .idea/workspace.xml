@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="caec1e25-5260-4954-96d5-ca7bcc1b056e" name="Changes" comment="Trouble Shooting">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/CurrentOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/CurrentOrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/current-order-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/current-order-view.fxml" afterDir="false" />
     </list>
