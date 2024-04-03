@@ -48,6 +48,10 @@ public class SandwichController {
         this.stage = stage;
         this.primaryStage = primaryStage;
         this.primaryScene = primaryScene;
+        System.out.println(mainController.getValue());
+        mainController.setValue();
+        System.out.println(mainController.getValue());
+
     }
 
 
@@ -96,6 +100,14 @@ public class SandwichController {
     }
 
     @FXML
+    protected void addSandwich() {
+        if(currentSandwich != null) {
+            mainController.addToCart(currentSandwich);
+        }
+
+    }
+
+    @FXML
     protected void returnToMain() {
         Stage mainView = new Stage();
         VBox root;
@@ -106,15 +118,19 @@ public class SandwichController {
             //view1.setScene(scene); //if you want to use the new window to display the new scene
             //view1.setTitle("view1");
             //view1.show();
+            System.out.println("check..");
             primaryStage.setScene(scene); //use the primary stage to display the new scene graph
+            //mainController.setPrimaryStage(primaryStage, primaryScene);
             MainController newMainController = loader.getController();
+            newMainController.setPrimaryStage(this.primaryStage, this.primaryScene, mainController.getCart());
+            //newMainController.setPrimaryStage(primaryStage, primaryScene);
+
 
             /*
               The statement below is to pass the reference of the MainController object
               to the View1Controller object so the View1Controller can call the
               public methods in the MainController.
              */
-            newMainController.setPrimaryStage(primaryStage, primaryScene);
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             System.out.println(e.toString());

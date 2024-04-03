@@ -1,6 +1,8 @@
 package com.example.softmethproject4new;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,6 +16,8 @@ public class MainController {
     private int value = 10; //sample data to share among the controllers.
     private Stage primaryStage; //reference to the main stage (window)
     private Scene primaryScene; //reference to the scene associated with the main stage
+    private ArrayList<MenuItem> cart = new ArrayList<>();
+
 
     /**
      * Constructor.
@@ -23,8 +27,15 @@ public class MainController {
      * @param scene the scene object associated with the primary stage.
      */
     public void setPrimaryStage(Stage stage, Scene scene) {
-        primaryStage = stage;
-        primaryScene = scene;
+        System.out.println("running");
+        this.primaryStage = stage;
+        this.primaryScene = scene;
+    }
+    public void setPrimaryStage(Stage stage, Scene scene, ArrayList<MenuItem> cart) {
+        System.out.println("running");
+        this.primaryStage = stage;
+        this.primaryScene = scene;
+        this.cart = cart;
     }
 
 
@@ -202,5 +213,19 @@ public class MainController {
      */
     public int getValue() {
         return value;
+    }
+
+    public void setValue() {
+        this.value -= 1;
+    }
+
+    public void addToCart(MenuItem currentItem) {
+        System.out.println(cart);
+        cart.add(currentItem);
+        System.out.println(cart);
+    }
+
+    public ArrayList<MenuItem> getCart() {
+        return cart;
     }
 }
