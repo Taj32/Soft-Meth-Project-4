@@ -86,7 +86,7 @@ public class View1Controller {
         String quantity = cb_quantity.getSelectionModel().getSelectedItem();
         String type = cb_donutType.getSelectionModel().getSelectedItem();
 
-        if (flavor != null && quantity != null & type != null) {
+        if (flavor != null && quantity != null && type != null) {
             int amount = Integer.parseInt(quantity);
             Donut order = new Donut(type, flavor, amount);
 
@@ -134,19 +134,19 @@ public class View1Controller {
         try { //it is possible to have an IOException because of the errors in the fxml file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
             root = (VBox) loader.load(); //type-cast to the data type of the root node
-            Scene scene = new Scene(root, 500, 400);
+            Scene scene = new Scene(root, 700, 500);
             //view1.setScene(scene); //if you want to use the new window to display the new scene
             //view1.setTitle("view1");
             //view1.show();
             primaryStage.setScene(scene); //use the primary stage to display the new scene graph
             MainController newMainController = loader.getController();
+            newMainController.setPrimaryStage(this.primaryStage, this.primaryScene, mainController.getCart());
 
             /*
               The statement below is to pass the reference of the MainController object
               to the View1Controller object so the View1Controller can call the
               public methods in the MainController.
              */
-            newMainController.setPrimaryStage(primaryStage, primaryScene);
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             System.out.println(e.toString());
@@ -157,5 +157,16 @@ public class View1Controller {
 //            alert.setContentText("Couldn't load View1.fxml.");
 //            alert.showAndWait();
         }
+    }
+
+    @FXML
+    protected void addDonuts() {
+        if(!donutOrderList.isEmpty()) {
+            for(Donut individualDonut : donutOrderList) {
+                System.out.println(individualDonut.getFlavor());
+                mainController.addToCart(individualDonut);
+            }
+        }
+
     }
 }
