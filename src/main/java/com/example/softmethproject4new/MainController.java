@@ -45,7 +45,7 @@ public class MainController {
         try { //it is possible to have an IOException because of the errors in the fxml file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("donut-view.fxml"));
             root = (AnchorPane) loader.load(); //type-cast to the data type of the root node
-            Scene scene = new Scene(root, 500, 400);
+            Scene scene = new Scene(root, 700, 400);
             //view1.setScene(scene); //if you want to use the new window to display the new scene
             //view1.setTitle("view1");
             //view1.show();
@@ -74,7 +74,7 @@ public class MainController {
         try { //it is possible to have an IOException because of the errors in the fxml file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("coffee-view.fxml"));
             root = (AnchorPane) loader.load(); //type-cast to the data type of the root node
-            Scene scene = new Scene(root, 500, 400);
+            Scene scene = new Scene(root, 700, 400);
             //view1.setScene(scene); //if you want to use the new window to display the new scene
             //view1.setTitle("view1");
             //view1.show();
@@ -106,7 +106,7 @@ public class MainController {
         try { //it is possible to have an IOException because of the errors in the fxml file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("sandwich-view.fxml"));
             root = (AnchorPane) loader.load(); //type-cast to the data type of the root node
-            Scene scene = new Scene(root, 500, 400);
+            Scene scene = new Scene(root, 700, 400);
             //view1.setScene(scene); //if you want to use the new window to display the new scene
             //view1.setTitle("view1");
             //view1.show();
@@ -138,7 +138,7 @@ public class MainController {
         try { //it is possible to have an IOException because of the errors in the fxml file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("current-order-view.fxml"));
             root = (AnchorPane) loader.load(); //type-cast to the data type of the root node
-            Scene scene = new Scene(root, 500, 400);
+            Scene scene = new Scene(root, 700, 400);
             //view1.setScene(scene); //if you want to use the new window to display the new scene
             //view1.setTitle("view1");
             //view1.show();
@@ -170,7 +170,7 @@ public class MainController {
         try { //it is possible to have an IOException because of the errors in the fxml file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("all-orders-view.fxml"));
             root = (AnchorPane) loader.load(); //type-cast to the data type of the root node
-            Scene scene = new Scene(root, 500, 400);
+            Scene scene = new Scene(root, 700, 400);
             //view1.setScene(scene); //if you want to use the new window to display the new scene
             //view1.setTitle("view1");
             //view1.show();

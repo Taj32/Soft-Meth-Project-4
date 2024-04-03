@@ -45,7 +45,7 @@ public class SandwichController {
         try { //it is possible to have an IOException because of the errors in the fxml file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
             root = (VBox) loader.load(); //type-cast to the data type of the root node
-            Scene scene = new Scene(root, 500, 400);
+            Scene scene = new Scene(root, 700, 500);
             //view1.setScene(scene); //if you want to use the new window to display the new scene
             //view1.setTitle("view1");
             //view1.show();
