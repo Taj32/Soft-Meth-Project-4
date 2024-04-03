@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="caec1e25-5260-4954-96d5-ca7bcc1b056e" name="Changes" comment="Trouble Shooting">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/cart.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/coffee.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/donut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/reciept.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/sandwich.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/Sandwich.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/AllOrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/AllOrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/CurrentOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/CurrentOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/SandwichController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/SandwichController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/View1Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/View1Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/coffeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/coffeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/coffee-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/coffee-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/sandwich-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/sandwich-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

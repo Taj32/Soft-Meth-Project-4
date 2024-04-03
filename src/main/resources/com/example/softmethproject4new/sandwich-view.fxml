@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -43,18 +44,26 @@
               </rowConstraints>
                <children>
                           <Label prefHeight="17.0" prefWidth="63.0" text="Bread type:" />
-                          <RadioButton mnemonicParsing="false" text="bagel" GridPane.columnIndex="1" />
-                          <RadioButton mnemonicParsing="false" text="wheat" GridPane.columnIndex="2" />
-                          <RadioButton mnemonicParsing="false" text="sour dough" GridPane.columnIndex="3" />
+                          <RadioButton mnemonicParsing="false" text="bagel" GridPane.columnIndex="1">
+                              <toggleGroup>
+                                <ToggleGroup fx:id="breadType" />
+                              </toggleGroup>
+                          </RadioButton>
+                          <RadioButton mnemonicParsing="false" text="wheat" toggleGroup="$breadType" GridPane.columnIndex="2" />
+                          <RadioButton mnemonicParsing="false" text="sour dough" toggleGroup="$breadType" GridPane.columnIndex="3" />
                           <Label prefHeight="17.0" prefWidth="75.0" text="Protein type:" GridPane.rowIndex="1" />
-                          <RadioButton mnemonicParsing="false" text="beef" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                          <RadioButton mnemonicParsing="false" text="fish" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                          <RadioButton mnemonicParsing="false" text="chicken" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                          <RadioButton mnemonicParsing="false" onAction="#sandwichOrder" text="beef" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <toggleGroup>
+                                  <ToggleGroup fx:id="proteinType" />
+                              </toggleGroup>
+                          </RadioButton>
+                          <RadioButton mnemonicParsing="false" onAction="#sandwichOrder" text="fish" toggleGroup="$proteinType" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                          <RadioButton mnemonicParsing="false" onAction="#sandwichOrder" text="chicken" toggleGroup="$proteinType" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                   <Label layoutX="10.0" layoutY="47.0" prefHeight="17.0" prefWidth="75.0" text="Add Ons:" GridPane.rowIndex="2" />
-                  <CheckBox mnemonicParsing="false" text="Lettuce" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <CheckBox mnemonicParsing="false" text="Tomatos" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <CheckBox mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                  <CheckBox mnemonicParsing="false" text="Onion" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <CheckBox mnemonicParsing="false" onAction="#changeAddOns" text="Lettuce" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <CheckBox mnemonicParsing="false" onAction="#changeAddOns" text="Tomatos" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <CheckBox mnemonicParsing="false" onAction="#changeAddOns" text="cheese" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <CheckBox mnemonicParsing="false" onAction="#changeAddOns" text="Onion" GridPane.columnIndex="4" GridPane.rowIndex="2" />
                </children>
                <VBox.margin>
                   <Insets />
@@ -67,7 +76,7 @@
                     <children>
                         <Button mnemonicParsing="false" onAction="#returnToMain" text="Back" />
                         <Label prefHeight="18.0" prefWidth="70.0" text="Sub Total:" />
-                        <TextArea editable="false" prefHeight="45.0" prefWidth="131.0" text="\$0.00" />
+                        <TextArea fx:id="sandwichPrice" editable="false" prefHeight="45.0" prefWidth="131.0" text="\$0.00" />
                         <Button mnemonicParsing="false" text="add to Order" />
                     </children>
                     <padding>

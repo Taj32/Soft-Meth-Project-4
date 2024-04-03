@@ -28,6 +28,8 @@ public class coffeeController {
     @FXML
     private Button menuButton;
 
+
+
     public void setMainController (MainController controller,
                                    Stage stage,
                                    Stage primaryStage,
