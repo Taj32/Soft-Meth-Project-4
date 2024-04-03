@@ -45,7 +45,7 @@
                   <CheckBox mnemonicParsing="false" onAction="#changeAddOns" text="Irish Cream" GridPane.rowIndex="2" />
                   <CheckBox mnemonicParsing="false" onAction="#changeAddOns" text="Mocha" GridPane.columnIndex="1" />
                   <CheckBox mnemonicParsing="false" onAction="#changeAddOns" text="Caramel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" text="add to Order" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Button mnemonicParsing="false" onAction="#addCoffee" text="add to Order" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                   <ComboBox fx:id="cb_size" prefWidth="150.0" promptText="Size" GridPane.columnIndex="2" />
                   <ComboBox fx:id="cb_quantity" onAction="#coffeeOrder" prefWidth="150.0" promptText="Quantity" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <Button layoutX="418.0" layoutY="118.0" mnemonicParsing="false" onAction="#returnToMain" text="Back to Menu" GridPane.rowIndex="3" />

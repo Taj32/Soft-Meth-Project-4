@@ -70,6 +70,14 @@ public class coffeeController {
 
     }
 
+    @FXML
+    protected void addCoffee() {
+        if(currentCoffee != null) {
+            mainController.addToCart(currentCoffee);
+        }
+
+    }
+
     public void coffeeOrder(ActionEvent event) {
         String size = cb_size.getSelectionModel().getSelectedItem();
         String quantity = cb_quantity.getSelectionModel().getSelectedItem();
@@ -131,13 +139,14 @@ public class coffeeController {
             //view1.show();
             primaryStage.setScene(scene); //use the primary stage to display the new scene graph
             MainController newMainController = loader.getController();
+            newMainController.setPrimaryStage(this.primaryStage, this.primaryScene, mainController.getCart());
 
             /*
               The statement below is to pass the reference of the MainController object
               to the View1Controller object so the View1Controller can call the
               public methods in the MainController.
              */
-            newMainController.setPrimaryStage(primaryStage, primaryScene);
+            //newMainController.setPrimaryStage(primaryStage, primaryScene);
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             System.out.println(e.toString());
