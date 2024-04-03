@@ -26,6 +26,16 @@ public class CurrentOrderController {
     @FXML
     TableColumn<MenuItem, String> item, price;
 
+    @FXML
+    private TextArea subTotal;
+
+    @FXML
+    private TextArea tax;
+
+    @FXML
+    private TextArea total;
+
+
 
     public void setMainController (MainController controller,
                                    Stage stage,
@@ -61,10 +71,31 @@ public class CurrentOrderController {
         price.setCellValueFactory(cellData -> new SimpleStringProperty(  Double.toString(cellData.getValue().price()  )   ) );
 
 
+        //Calculate costs
+        updateOrderTotals();
 
 
 
         //currentOrder.setItems(observableList);
+
+    }
+
+    private void updateOrderTotals() {
+
+        double sub = 0.0;
+        double taxTotal = 0.0;
+        double grandTotal = 0.0;
+
+        for(MenuItem element : mainController.getCart()) {
+            sub += element.price();
+        }
+
+        taxTotal = sub * 0.0625;
+        grandTotal = sub + taxTotal;
+
+        subTotal.setText("$" + sub);
+        tax.setText("$" + taxTotal);
+        total.setText("$" + grandTotal);
 
     }
 
