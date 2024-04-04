@@ -139,7 +139,7 @@ public class CurrentOrderController {
             //view1.show();
             primaryStage.setScene(scene); //use the primary stage to display the new scene graph
             MainController newMainController = loader.getController();
-            newMainController.setPrimaryStage(this.primaryStage, this.primaryScene, mainController.getCart());
+            newMainController.setPrimaryStage(this.primaryStage, this.primaryScene, mainController.getCart(), mainController.getAllOrders());
 
             /*
               The statement below is to pass the reference of the MainController object

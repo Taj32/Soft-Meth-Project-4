@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Menu;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -19,7 +20,10 @@ public class MainController {
     private int value = 10; //sample data to share among the controllers.
     private Stage primaryStage; //reference to the main stage (window)
     private Scene primaryScene; //reference to thore scene associated with the main stage
+
+    //We're keeping these two lists between each page:
     private ArrayList<MenuItem> cart = new ArrayList<>();
+    private List<Order> allOrders = new ArrayList<>();
 
 
     /**
@@ -34,11 +38,12 @@ public class MainController {
         this.primaryStage = stage;
         this.primaryScene = scene;
     }
-    public void setPrimaryStage(Stage stage, Scene scene, ArrayList<MenuItem> cart) {
+    public void setPrimaryStage(Stage stage, Scene scene, ArrayList<MenuItem> cart, List<Order> allOrders) {
         System.out.println("running");
         this.primaryStage = stage;
         this.primaryScene = scene;
         this.cart = cart;
+        this.allOrders = allOrders;
     }
 
 
@@ -236,13 +241,26 @@ public class MainController {
         return cart;
     }
 
-    private List<Order> allOrders = new ArrayList<>();
-
-    public void addOrder(Order order) {
-        allOrders.add(order);
-        System.out.println("Cart Before: " + order);
+    public List<Order> getOrders() {
+        return allOrders;
     }
 
+
+    public void addOrder(Order order) {
+        System.out.println("All orders Before: ");
+        printAllOrders();
+        allOrders.add(order);
+        System.out.println("");
+        System.out.println("All orders After: ");
+        printAllOrders();
+    }
+
+    //Here for testing..
+    public void printAllOrders() {
+        for(Order singleOrder : allOrders) {
+            System.out.println(singleOrder);
+        }
+    }
     public List<Order> getAllOrders() {
         return allOrders;
     }

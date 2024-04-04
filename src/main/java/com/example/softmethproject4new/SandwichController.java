@@ -124,7 +124,7 @@ public class SandwichController {
             primaryStage.setScene(scene); //use the primary stage to display the new scene graph
             //mainController.setPrimaryStage(primaryStage, primaryScene);
             MainController newMainController = loader.getController();
-            newMainController.setPrimaryStage(this.primaryStage, this.primaryScene, mainController.getCart());
+            newMainController.setPrimaryStage(this.primaryStage, this.primaryScene, mainController.getCart(), mainController.getAllOrders());
             //newMainController.setPrimaryStage(primaryStage, primaryScene);
 
 
