@@ -19,9 +19,9 @@ public class Sandwich extends MenuItem {
         }
         this.protein = protein;
         this.addOns = addOns;
-
-        System.out.println(bread);
-        System.out.println(protein);
+//
+//        System.out.println(bread);
+//        System.out.println(protein);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class Sandwich extends MenuItem {
 
         for (String element : addOns) {
             if(element.equals("cheese")) {
-                System.out.println("adding cheese");
+//                System.out.println("adding cheese");
                 sandwich_price += 1;
             }
             else {

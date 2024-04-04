@@ -20,9 +20,9 @@
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="200.0">
                     <children>
                         <ComboBox fx:id="cb_donutType" prefWidth="150.0" promptText="donut type" />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="donutImage" fitHeight="102.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@donut.jpg" />
+                                <Image url="@pile.jpg" />
                             </image>
                         </ImageView>
                     </children>

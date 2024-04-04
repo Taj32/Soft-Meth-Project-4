@@ -37,7 +37,7 @@ public class SandwichController {
     private TextArea sandwichPrice;
 
     public void initialize() {
-        System.out.println("starting up!");
+//        System.out.println("starting up!");
         addOns = new ArrayList<>();
 //        sandwichOrders.setItems(orderList);
     }
@@ -50,9 +50,9 @@ public class SandwichController {
         this.stage = stage;
         this.primaryStage = primaryStage;
         this.primaryScene = primaryScene;
-        System.out.println(mainController.getValue());
+//        System.out.println(mainController.getValue());
         mainController.setValue();
-        System.out.println(mainController.getValue());
+//        System.out.println(mainController.getValue());
 
     }
 //    ListView<String> sandwichOrders;
@@ -67,12 +67,12 @@ public class SandwichController {
 
 
         if(protein != null) {
-            System.out.println("check");
+//            System.out.println("check");
             currentSandwich = new Sandwich(bread.getText(), protein.getText(), addOns);
-
-//            orderList.add(protein.getText()+"(1)");
             updateSandwichTotal();
         }
+
+//
     }
 
     private void updateSandwichTotal() {
@@ -85,15 +85,13 @@ public class SandwichController {
         RadioButton protein = (RadioButton) proteinType.getSelectedToggle();
         CheckBox currentCheckBox = (CheckBox) event.getSource();
         if(!addOns.contains(currentCheckBox.getText())) {
-            // Add on has not been selected
             addOns.add(currentCheckBox.getText());
-            System.out.println("selecting..");
+//            System.out.println("selecting..");
         }
         else {
-            // Add on list already contains checkbox
-            // so remove it since we're deselecting...
+
             addOns.remove(currentCheckBox.getText());
-            System.out.println("deselecting...");
+//            System.out.println("deselecting...");
         }
 
         currentSandwich = new Sandwich(bread.getText(), protein.getText(), addOns);
@@ -102,10 +100,27 @@ public class SandwichController {
     }
 
     @FXML
+    private Button button1;
+    @FXML
+    private Button button2;
+
+    @FXML
     protected void addSandwich() {
+        RadioButton bread = (RadioButton) breadType.getSelectedToggle();
+        RadioButton protein = (RadioButton) proteinType.getSelectedToggle();
         if(currentSandwich != null) {
-            mainController.addToCart(currentSandwich);
+            ArrayList<String> currentAddOns = new ArrayList<>(addOns);
+
+            Sandwich newSandwich = new Sandwich(bread.getText(), protein.getText(), currentAddOns);
+            mainController.addToCart(newSandwich);
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("No Selection");
+            alert.setHeaderText(null);
+            alert.setContentText("Items added to cart!");
+            alert.showAndWait();
         }
+
 
     }
 
@@ -117,10 +132,8 @@ public class SandwichController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
             root = (VBox) loader.load(); //type-cast to the data type of the root node
             Scene scene = new Scene(root, 700, 500);
-            //view1.setScene(scene); //if you want to use the new window to display the new scene
-            //view1.setTitle("view1");
-            //view1.show();
-            System.out.println("check..");
+
+//            System.out.println("check..");
             primaryStage.setScene(scene); //use the primary stage to display the new scene graph
             //mainController.setPrimaryStage(primaryStage, primaryScene);
             MainController newMainController = loader.getController();
@@ -137,11 +150,7 @@ public class SandwichController {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             System.out.println(e.toString());
             alert.setTitle("ERROR");
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setTitle("ERROR");
-//            alert.setHeaderText("Loading View1.fxml.");
-//            alert.setContentText("Couldn't load View1.fxml.");
-//            alert.showAndWait();
+
         }
     }
 

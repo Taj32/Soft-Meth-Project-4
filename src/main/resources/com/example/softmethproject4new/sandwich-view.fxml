@@ -44,7 +44,7 @@
               </rowConstraints>
                <children>
                           <Label prefHeight="17.0" prefWidth="63.0" text="Bread type:" />
-                          <RadioButton mnemonicParsing="false" text="bagel" GridPane.columnIndex="1">
+                          <RadioButton mnemonicParsing="false" selected="true" text="bagel" GridPane.columnIndex="1">
                               <toggleGroup>
                                 <ToggleGroup fx:id="breadType" />
                               </toggleGroup>
@@ -52,7 +52,7 @@
                           <RadioButton mnemonicParsing="false" text="wheat" toggleGroup="$breadType" GridPane.columnIndex="2" />
                           <RadioButton mnemonicParsing="false" text="sour dough" toggleGroup="$breadType" GridPane.columnIndex="3" />
                           <Label prefHeight="17.0" prefWidth="75.0" text="Protein type:" GridPane.rowIndex="1" />
-                          <RadioButton mnemonicParsing="false" onAction="#sandwichOrder" text="beef" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                          <RadioButton mnemonicParsing="false" onAction="#sandwichOrder" selected="true" text="beef" GridPane.columnIndex="1" GridPane.rowIndex="1">
                               <toggleGroup>
                                   <ToggleGroup fx:id="proteinType" />
                               </toggleGroup>

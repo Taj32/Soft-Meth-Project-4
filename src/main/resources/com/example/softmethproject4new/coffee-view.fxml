@@ -40,11 +40,11 @@
                   <RowConstraints maxHeight="35.99997965494791" minHeight="0.0" prefHeight="26.666666666666657" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <CheckBox mnemonicParsing="false" onAction="#changeAddOns" text="Sweet Cream" />
-                  <CheckBox mnemonicParsing="false" onAction="#changeAddOns" text="French Vanilla" GridPane.rowIndex="1" />
-                  <CheckBox mnemonicParsing="false" onAction="#changeAddOns" text="Irish Cream" GridPane.rowIndex="2" />
-                  <CheckBox mnemonicParsing="false" onAction="#changeAddOns" text="Mocha" GridPane.columnIndex="1" />
-                  <CheckBox mnemonicParsing="false" onAction="#changeAddOns" text="Caramel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="box1" mnemonicParsing="false" onAction="#changeAddOns" text="Sweet Cream" />
+                  <CheckBox fx:id="box2" mnemonicParsing="false" onAction="#changeAddOns" text="French Vanilla" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="box3" mnemonicParsing="false" onAction="#changeAddOns" text="Irish Cream" GridPane.rowIndex="2" />
+                  <CheckBox fx:id="box4" mnemonicParsing="false" onAction="#changeAddOns" text="Mocha" GridPane.columnIndex="1" />
+                  <CheckBox fx:id="box5" mnemonicParsing="false" onAction="#changeAddOns" text="Caramel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Button mnemonicParsing="false" onAction="#addCoffee" text="add to Order" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                   <ComboBox fx:id="cb_size" onAction="#coffeeOrder" prefWidth="150.0" promptText="Size" GridPane.columnIndex="2" />
                   <ComboBox fx:id="cb_quantity" onAction="#coffeeOrder" prefWidth="150.0" promptText="Quantity" GridPane.columnIndex="2" GridPane.rowIndex="1" />

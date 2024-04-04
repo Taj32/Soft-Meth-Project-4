@@ -34,12 +34,12 @@ public class MainController {
      * @param scene the scene object associated with the primary stage.
      */
     public void setPrimaryStage(Stage stage, Scene scene) {
-        System.out.println("running");
+//        System.out.println("running");
         this.primaryStage = stage;
         this.primaryScene = scene;
     }
     public void setPrimaryStage(Stage stage, Scene scene, ArrayList<MenuItem> cart, List<Order> allOrders) {
-        System.out.println("running");
+//        System.out.println("running");
         this.primaryStage = stage;
         this.primaryScene = scene;
         this.cart = cart;
@@ -65,9 +65,6 @@ public class MainController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("donut-view.fxml"));
             root = (AnchorPane) loader.load(); //type-cast to the data type of the root node
             Scene scene = new Scene(root, 700, 400);
-            //view1.setScene(scene); //if you want to use the new window to display the new scene
-            //view1.setTitle("view1");
-            //view1.show();
             primaryStage.setScene(scene); //use the primary stage to display the new scene graph
             View1Controller view1controller = loader.getController();
             /*
@@ -77,12 +74,11 @@ public class MainController {
              */
             view1controller.setMainController(this, view1, primaryStage, primaryScene);
         } catch (IOException e) {
-            System.out.println(e.toString());
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setTitle("ERROR");
-//            alert.setHeaderText("Loading View1.fxml.");
-//            alert.setContentText("Couldn't load View1.fxml.");
-//            alert.showAndWait();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+
+//            System.out.println(e.toString());
+            alert.setTitle("ERROR");
+
         }
     }
 
@@ -94,9 +90,6 @@ public class MainController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("coffee-view.fxml"));
             root = (AnchorPane) loader.load(); //type-cast to the data type of the root node
             Scene scene = new Scene(root, 700, 400);
-            //view1.setScene(scene); //if you want to use the new window to display the new scene
-            //view1.setTitle("view1");
-            //view1.show();
             primaryStage.setScene(scene); //use the primary stage to display the new scene graph
             coffeeController cofController = loader.getController();
 
@@ -108,13 +101,8 @@ public class MainController {
             cofController.setMainController(this, coffeeView, primaryStage, primaryScene);
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            System.out.println(e.toString());
+//            System.out.println(e.toString());
             alert.setTitle("ERROR");
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setTitle("ERROR");
-//            alert.setHeaderText("Loading View1.fxml.");
-//            alert.setContentText("Couldn't load View1.fxml.");
-//            alert.showAndWait();
         }
     }
 
@@ -126,9 +114,6 @@ public class MainController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("sandwich-view.fxml"));
             root = (AnchorPane) loader.load(); //type-cast to the data type of the root node
             Scene scene = new Scene(root, 700, 400);
-            //view1.setScene(scene); //if you want to use the new window to display the new scene
-            //view1.setTitle("view1");
-            //view1.show();
             primaryStage.setScene(scene); //use the primary stage to display the new scene graph
             SandwichController sandwichController = loader.getController();
 
@@ -140,13 +125,8 @@ public class MainController {
             sandwichController.setMainController(this, sandwichView, primaryStage, primaryScene);
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            System.out.println(e.toString());
+//            System.out.println(e.toString());
             alert.setTitle("ERROR");
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setTitle("ERROR");
-//            alert.setHeaderText("Loading View1.fxml.");
-//            alert.setContentText("Couldn't load View1.fxml.");
-//            alert.showAndWait();
         }
     }
 
@@ -158,9 +138,6 @@ public class MainController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("current-order-view.fxml"));
             root = (AnchorPane) loader.load(); //type-cast to the data type of the root node
             Scene scene = new Scene(root, 700, 400);
-            //view1.setScene(scene); //if you want to use the new window to display the new scene
-            //view1.setTitle("view1");
-            //view1.show();
             primaryStage.setScene(scene); //use the primary stage to display the new scene graph
             CurrentOrderController currentOrderController = loader.getController();
 
@@ -174,13 +151,9 @@ public class MainController {
 
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            System.out.println(e.toString());
+//            System.out.println(e.toString());
             alert.setTitle("ERROR");
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setTitle("ERROR");
-//            alert.setHeaderText("Loading View1.fxml.");
-//            alert.setContentText("Couldn't load View1.fxml.");
-//            alert.showAndWait();
+
         }
     }
 
@@ -192,9 +165,6 @@ public class MainController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("all-orders-view.fxml"));
             root = (AnchorPane) loader.load(); //type-cast to the data type of the root node
             Scene scene = new Scene(root, 700, 400);
-            //view1.setScene(scene); //if you want to use the new window to display the new scene
-            //view1.setTitle("view1");
-            //view1.show();
             primaryStage.setScene(scene); //use the primary stage to display the new scene graph
             AllOrdersController allOrdersController = loader.getController();
 
@@ -204,17 +174,11 @@ public class MainController {
               public methods in the MainController.
              */
             allOrdersController.setMainController(this, allOrdersView, primaryStage, primaryScene);
-            allOrdersController.updateListView();
             allOrdersController.populateOrderNumbers();
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            System.out.println(e.toString());
+            //System.out.println(e.toString());
             alert.setTitle("ERROR");
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setTitle("ERROR");
-//            alert.setHeaderText("Loading View1.fxml.");
-//            alert.setContentText("Couldn't load View1.fxml.");
-//            alert.showAndWait();
         }
     }
 
@@ -232,9 +196,7 @@ public class MainController {
     }
 
     public void addToCart(MenuItem currentItem) {
-        System.out.println("Cart Before: " + cart);
         cart.add(currentItem);
-        System.out.println("Cart After: " + cart);
     }
 
     public ArrayList<MenuItem> getCart() {
@@ -247,36 +209,27 @@ public class MainController {
 
 
     public void addOrder(Order order) {
-        System.out.println("All orders Before: ");
         printAllOrders();
         allOrders.add(order);
-        System.out.println("");
-        System.out.println("All orders After: ");
         printAllOrders();
     }
 
     //Here for testing..
     public void printAllOrders() {
         for(Order singleOrder : allOrders) {
-            System.out.println(singleOrder);
+//            System.out.println(singleOrder);
         }
     }
     public List<Order> getAllOrders() {
         return allOrders;
     }
 
-    private AllOrdersController allOrdersController;
-
-    public void setAllOrdersController(AllOrdersController controller) {
-        this.allOrdersController = controller;
+    public void removeOrder(int orderNumber) {
+        allOrders.removeIf(order -> order.getOrderNumber() == orderNumber);
     }
 
-    public void updateAllOrdersView() {
-        if (allOrdersController != null) {
-            allOrdersController.updateListView();
 
-        }
-    }
+
 
 
 

@@ -61,20 +61,67 @@ public class coffeeController {
         cb_quantity.getItems().addAll("1", "2", "3", "4", "5");
         addins = new ArrayList<>();
 
-
-        //donutOrders.setItems(orderList);
-
-        //cb_donutType.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
-        //    updateFlavors(newValue);
-        //});
-
     }
 
     @FXML
     protected void addCoffee() {
+        String size = cb_size.getSelectionModel().getSelectedItem();
+        String quantity = cb_quantity.getSelectionModel().getSelectedItem();
         if(currentCoffee != null) {
-            mainController.addToCart(currentCoffee);
+            int amount = Integer.parseInt(quantity);
+            ArrayList<String> currentAddIns = new ArrayList<>(addins);
+            Coffee newCoffee = new Coffee(size, amount,currentAddIns);
+
+            mainController.addToCart(newCoffee);
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("No Selection");
+            alert.setHeaderText(null);
+            alert.setContentText("Items added to cart!");
+            alert.showAndWait();
+
+//            System.out.println(currentCoffee.toString());
+
+
+
+
         }
+
+    }
+
+    @FXML
+    CheckBox box1;
+    @FXML
+    CheckBox box2;
+    @FXML
+    CheckBox box3;
+    @FXML
+    CheckBox box4;
+    @FXML
+    CheckBox box5;
+
+    private void reset(){
+        box1.setSelected(false);
+        box2.setSelected(false);
+        box3.setSelected(false);
+        box4.setSelected(false);
+        box5.setSelected(false);
+
+        // Clear the addins list
+        addins.clear();
+
+        String size = cb_size.getSelectionModel().getSelectedItem();
+        String quantity = cb_quantity.getSelectionModel().getSelectedItem();
+
+        if(size != null && quantity != null) {
+            //calculate the cost
+            int amount = Integer.parseInt(quantity);
+            currentCoffee = new Coffee(size, amount, addins);
+            updateCoffeeTotal();
+
+        }
+
+
 
     }
 
@@ -90,7 +137,7 @@ public class coffeeController {
 
         }
 
-        System.out.println(size);
+//        System.out.println(size);
     }
 
     private void updateCoffeeTotal() {
@@ -99,19 +146,17 @@ public class coffeeController {
 
     @FXML
     public void changeAddOns(ActionEvent event) {
-        //RadioButton bread = (RadioButton) breadType.getSelectedToggle();
-        //RadioButton protein = (RadioButton) proteinType.getSelectedToggle();
+
         CheckBox currentCheckBox = (CheckBox) event.getSource();
         if(!addins.contains(currentCheckBox.getText())) {
             // Add on has not been selected
             addins.add(currentCheckBox.getText());
-            System.out.println("selecting..");
+//            System.out.println("selecting..");
         }
         else {
-            // Add on list already contains checkbox
-            // so remove it since we're deselecting...
+
             addins.remove(currentCheckBox.getText());
-            System.out.println("deselecting...");
+//            System.out.println("deselecting...");
         }
 
         String size = cb_size.getSelectionModel().getSelectedItem();
@@ -134,9 +179,7 @@ public class coffeeController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
             root = (VBox) loader.load(); //type-cast to the data type of the root node
             Scene scene = new Scene(root, 700, 500);
-            //view1.setScene(scene); //if you want to use the new window to display the new scene
-            //view1.setTitle("view1");
-            //view1.show();
+
             primaryStage.setScene(scene); //use the primary stage to display the new scene graph
             MainController newMainController = loader.getController();
             newMainController.setPrimaryStage(this.primaryStage, this.primaryScene, mainController.getCart(), mainController.getAllOrders());
@@ -149,13 +192,9 @@ public class coffeeController {
             //newMainController.setPrimaryStage(primaryStage, primaryScene);
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            System.out.println(e.toString());
+//            System.out.println(e.toString());
             alert.setTitle("ERROR");
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setTitle("ERROR");
-//            alert.setHeaderText("Loading View1.fxml.");
-//            alert.setContentText("Couldn't load View1.fxml.");
-//            alert.showAndWait();
+
         }
     }
 }

@@ -25,20 +25,27 @@ public class Order {
         return items;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder s = new StringBuilder("Order #" + orderNumber + ": ");
-        if (items.isEmpty()) {
-            s.append("No items.");
-        } else {
-            for(MenuItem item: items) {
-                s.append(item.toString()).append(", ");
-            }
-            // Remove the last comma and space
-            s.setLength(s.length() - 2);
+    public double calculateTotal() {
+        double total = 0.0;
+        for (MenuItem item : this.items) {
+            total += item.price();
         }
-        return s.toString();
+        return total;
     }
+
+//    @Override
+//    public String toString() {
+//        StringBuilder s = new StringBuilder("Order #" + orderNumber + ": ");
+//        if (items.isEmpty()) {
+//            s.append("No items.");
+//        } else {
+//            for(MenuItem item: items) {
+//                s.append(item.toString()).append(", ");
+//            }
+//            s.setLength(s.length() - 2);
+//        }
+//        return s.toString();
+//    }
 
 }
 

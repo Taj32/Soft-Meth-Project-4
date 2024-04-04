@@ -43,7 +43,7 @@ public class CurrentOrderController {
                                    Stage stage,
                                    Stage primaryStage,
                                    Scene primaryScene) {
-        System.out.println("running this part..");
+//        System.out.println("running this part..");
         this.mainController = controller;
         this.stage = stage;
         this.primaryStage = primaryStage;
@@ -54,9 +54,6 @@ public class CurrentOrderController {
 
         ObservableList<MenuItem> currentOrder = FXCollections.observableArrayList();//write code to read from the file.
 
-        //for(MenuItem element : mainController.getCart()) {
-        //    System.out.println(element);
-        //}
         if(mainController.getCart() == null) {
             return;
         }
@@ -64,6 +61,7 @@ public class CurrentOrderController {
 
         for(MenuItem element : mainController.getCart()) {
             currentOrder.add(element);
+
         }
 
         table.setItems(currentOrder);
@@ -81,17 +79,28 @@ public class CurrentOrderController {
     }
 
     public void removeOrders(ActionEvent event) {
-        System.out.println(table.getSelectionModel().getSelectedItem());
-        MenuItem selectedItem = (MenuItem) table.getSelectionModel().getSelectedItem();
-
-        for(MenuItem element : mainController.getCart()) {
-            if(selectedItem.equals(element)) {
-                mainController.getCart().remove(selectedItem);
-                break;
+//        System.out.println(table.getSelectionModel().getSelectedItem());
+        try{
+            MenuItem selectedItem = (MenuItem) table.getSelectionModel().getSelectedItem();
+            for(MenuItem element : mainController.getCart()) {
+                if(selectedItem.equals(element)) {
+                    mainController.getCart().remove(selectedItem);
+                    break;
+                }
             }
+
+            populateTable();
+
+        }catch (RuntimeException e){
+
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("No Selection");
+                alert.setHeaderText(null);
+                alert.setContentText("Item was not selected to remove.");
+                alert.showAndWait();
+
         }
 
-        populateTable();
     }
 
     private void updateOrderTotals() {
@@ -122,7 +131,12 @@ public class CurrentOrderController {
             mainController.getCart().clear(); // Clear the current cart
             populateTable(); // Refresh the current order table (it should be empty now)
             // Optionally, switch to the AllOrders view or notify the user
-            mainController.updateAllOrdersView();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("No Selection");
+            alert.setHeaderText(null);
+            alert.setContentText("No items in cart to place!");
+            alert.showAndWait();
         }
     }
 
@@ -148,7 +162,7 @@ public class CurrentOrderController {
              */
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            System.out.println(e.toString());
+//            System.out.println(e.toString());
             alert.setTitle("ERROR");
 //            Alert alert = new Alert(Alert.AlertType.ERROR);
 //            alert.setTitle("ERROR");

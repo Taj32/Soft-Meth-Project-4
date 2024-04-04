@@ -10,6 +10,7 @@ public class Donut extends MenuItem{
     private String flavor;
     private int quantity;
 
+
     public Donut(String type, String flavor, int quantity){
         this.type = type;
         this.flavor = flavor;

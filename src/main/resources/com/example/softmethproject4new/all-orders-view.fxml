@@ -19,19 +19,15 @@
             <children>
                 <ComboBox fx:id="orderNumbers" prefHeight="25.0" prefWidth="87.0" promptText="Orders" />
                 <Label text="Total Amount:" />
-                <TextField editable="false" prefHeight="25.0" prefWidth="71.0" />
-                <Label layoutX="160.0" layoutY="10.0" text="Subtotal:" />
-                <TextField editable="false" layoutX="235.0" layoutY="10.0" prefHeight="25.0" prefWidth="68.0" />
-                <Label layoutX="283.0" layoutY="10.0" text="Tax:" />
-                <TextField editable="false" layoutX="295.0" layoutY="10.0" prefHeight="25.0" prefWidth="74.0" />
+                <TextField fx:id="totalCost" editable="false" prefHeight="25.0" prefWidth="71.0" />
             </children>
         </HBox>
         <ListView fx:id="orderListView" layoutX="55.0" layoutY="179.0" prefHeight="147.0" prefWidth="490.0" />
         <HBox alignment="CENTER" layoutX="55.0" layoutY="338.0" prefHeight="48.0" prefWidth="490.0" spacing="100.0">
             <children>
                 <Button layoutX="55.0" layoutY="21.0" mnemonicParsing="false" onAction="#returnToMain" prefHeight="25.0" prefWidth="150.0" text="Back" />
-                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Cancel Order" />
-                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Export Order" />
+                <Button mnemonicParsing="false" onAction="#removeSelectedOrder" prefHeight="25.0" prefWidth="150.0" text="Cancel Order" />
+                <Button mnemonicParsing="false" onAction="#exportOrdersToFile" prefHeight="25.0" prefWidth="150.0" text="Export Order" />
             </children>
         </HBox>
     </children>

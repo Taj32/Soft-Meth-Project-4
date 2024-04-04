@@ -7,11 +7,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -20,8 +24,7 @@ public class View1Controller {
     private Stage stage;
     private Scene primaryScene;
     private Stage primaryStage;
-    private ObservableList<String> colorList;
-    private ObservableList<String> fruitList;
+
     @FXML
     private Label value;
     @FXML
@@ -32,6 +35,9 @@ public class View1Controller {
     private ListView<String> listview;
     @FXML
     private Button menuButton;
+
+    @FXML
+    ImageView donutImage;
 
 
     public void setMainController(MainController controller,
@@ -60,6 +66,12 @@ public class View1Controller {
     private TextArea donutTotal;
     private ObservableList<Donut> donutOrderList = FXCollections.observableArrayList();
 
+    private Image yeast = new Image("file:src/main/resources/com/example/softmethproject4new/yeast.jpg");
+    private Image cake = new Image("file:src/main/resources/com/example/softmethproject4new/donut.jpg");
+
+    private Image holes = new Image("file:src/main/resources/com/example/softmethproject4new/holes.jpg");
+
+
 
     public void initialize() {
 
@@ -70,8 +82,25 @@ public class View1Controller {
 
         cb_donutType.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
             updateFlavors(newValue);
+            updateImage(cb_donutType.getSelectionModel().getSelectedItem());
+
         });
 
+
+    }
+
+    public void updateImage(String type){
+        switch (type){
+            case "Yeast":
+                donutImage.setImage(yeast);
+                break;
+            case "Cake":
+                donutImage.setImage(cake);
+                break;
+            case "Donut Holes":
+                donutImage.setImage(holes);
+                break;
+        }
     }
 
     public void updateFlavors(String type) {
@@ -94,6 +123,8 @@ public class View1Controller {
 
             donutOrderList.add(order);
             updateDonutTotal();
+
+
 
         }
 
@@ -135,9 +166,6 @@ public class View1Controller {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
             root = (VBox) loader.load(); //type-cast to the data type of the root node
             Scene scene = new Scene(root, 700, 500);
-            //view1.setScene(scene); //if you want to use the new window to display the new scene
-            //view1.setTitle("view1");
-            //view1.show();
             primaryStage.setScene(scene); //use the primary stage to display the new scene graph
             MainController newMainController = loader.getController();
             newMainController.setPrimaryStage(this.primaryStage, this.primaryScene, mainController.getCart(), mainController.getAllOrders());
@@ -149,13 +177,8 @@ public class View1Controller {
              */
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            System.out.println(e.toString());
+//            System.out.println(e.toString());
             alert.setTitle("ERROR");
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setTitle("ERROR");
-//            alert.setHeaderText("Loading View1.fxml.");
-//            alert.setContentText("Couldn't load View1.fxml.");
-//            alert.showAndWait();
         }
     }
 
@@ -163,10 +186,30 @@ public class View1Controller {
     protected void addDonuts() {
         if(!donutOrderList.isEmpty()) {
             for(Donut individualDonut : donutOrderList) {
-                System.out.println(individualDonut.getFlavor());
                 mainController.addToCart(individualDonut);
+
             }
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("No Selection");
+            alert.setHeaderText(null);
+            alert.setContentText("Items added to cart!");
+            alert.showAndWait();
+
+            reset();
         }
 
     }
+
+    private void reset() {
+        // Reset the ComboBox selections to the first item or null
+
+
+        // Reset the TextArea for the total amount
+        donutTotal.setText("$0.00");
+
+        // Clear the order lists if necessary
+        orderList.clear();
+        donutOrderList.clear();
+    }
+
 }
