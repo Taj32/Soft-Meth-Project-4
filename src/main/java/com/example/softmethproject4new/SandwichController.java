@@ -1,5 +1,6 @@
 package com.example.softmethproject4new;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -38,6 +39,7 @@ public class SandwichController {
     public void initialize() {
         System.out.println("starting up!");
         addOns = new ArrayList<>();
+//        sandwichOrders.setItems(orderList);
     }
 
     public void setMainController (MainController controller,
@@ -53,6 +55,9 @@ public class SandwichController {
         System.out.println(mainController.getValue());
 
     }
+//    ListView<String> sandwichOrders;
+//
+//    private ObservableList<String> orderList = FXCollections.observableArrayList();
 
 
     @FXML
@@ -60,21 +65,18 @@ public class SandwichController {
         RadioButton bread = (RadioButton) breadType.getSelectedToggle();
         RadioButton protein = (RadioButton) proteinType.getSelectedToggle();
 
+
         if(protein != null) {
             System.out.println("check");
-            if(currentSandwich == null) {
-                currentSandwich = new Sandwich(bread.getText(), protein.getText(), addOns);
-            }
-            else {
-                currentSandwich = new Sandwich(bread.getText(), protein.getText(), addOns);
-            }
+            currentSandwich = new Sandwich(bread.getText(), protein.getText(), addOns);
 
+//            orderList.add(protein.getText()+"(1)");
             updateSandwichTotal();
         }
     }
 
     private void updateSandwichTotal() {
-        sandwichPrice.setText("$" + currentSandwich.price());
+        sandwichPrice.setText(String.format("$%.2f",currentSandwich.price()));
     }
 
     @FXML

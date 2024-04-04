@@ -2,7 +2,10 @@ package com.example.softmethproject4new;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,7 +18,7 @@ import javafx.stage.Stage;
 public class MainController {
     private int value = 10; //sample data to share among the controllers.
     private Stage primaryStage; //reference to the main stage (window)
-    private Scene primaryScene; //reference to the scene associated with the main stage
+    private Scene primaryScene; //reference to thore scene associated with the main stage
     private ArrayList<MenuItem> cart = new ArrayList<>();
 
 
@@ -196,6 +199,8 @@ public class MainController {
               public methods in the MainController.
              */
             allOrdersController.setMainController(this, allOrdersView, primaryStage, primaryScene);
+            allOrdersController.updateListView();
+            allOrdersController.populateOrderNumbers();
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             System.out.println(e.toString());
@@ -230,4 +235,31 @@ public class MainController {
     public ArrayList<MenuItem> getCart() {
         return cart;
     }
+
+    private List<Order> allOrders = new ArrayList<>();
+
+    public void addOrder(Order order) {
+        allOrders.add(order);
+        System.out.println("Cart Before: " + order);
+    }
+
+    public List<Order> getAllOrders() {
+        return allOrders;
+    }
+
+    private AllOrdersController allOrdersController;
+
+    public void setAllOrdersController(AllOrdersController controller) {
+        this.allOrdersController = controller;
+    }
+
+    public void updateAllOrdersView() {
+        if (allOrdersController != null) {
+            allOrdersController.updateListView();
+
+        }
+    }
+
+
+
 }

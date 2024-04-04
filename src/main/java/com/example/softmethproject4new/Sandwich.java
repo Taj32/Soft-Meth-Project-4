@@ -64,5 +64,14 @@ public class Sandwich extends MenuItem {
         this.protein = protein;
     }
 
+    @Override
+    public String toString(){
+        String addOnsString = String.join(", ", addOns);
+        if (addOns.isEmpty()){
+            return protein +" sandwich(1) [" + bread + ", " + protein + "]";
+        } else return protein +" sandwich(1) [" + bread + ", " + protein + ", " + "[" + addOnsString + "]]";
+
+
+    }
 
 }

@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CurrentOrderController {
     private MainController mainController;
@@ -67,7 +68,7 @@ public class CurrentOrderController {
 
         table.setItems(currentOrder);
         item.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().toString()));
-        price.setCellValueFactory(cellData -> new SimpleStringProperty(  Double.toString(cellData.getValue().price()  )   ) );
+        price.setCellValueFactory(cellData -> new SimpleStringProperty(String.format("$%.2f",cellData.getValue().price())));
 
 
         //Calculate costs
@@ -106,10 +107,23 @@ public class CurrentOrderController {
         taxTotal = sub * 0.0625;
         grandTotal = sub + taxTotal;
 
-        subTotal.setText("$" + sub);
-        tax.setText("$" + taxTotal);
-        total.setText("$" + grandTotal);
+        subTotal.setText(String.format("$%.2f",sub));
+        tax.setText(String.format("$%.2f",taxTotal));
+        total.setText(String.format("$%.2f",grandTotal));
 
+    }
+
+    @FXML
+    private void placeOrder(ActionEvent event) {
+        if (!mainController.getCart().isEmpty()) {
+            Order newOrder = new Order();
+            newOrder.addItems(new ArrayList<>(mainController.getCart())); // Clone to avoid reference issues
+            mainController.addOrder(newOrder); // Add this order to the main list
+            mainController.getCart().clear(); // Clear the current cart
+            populateTable(); // Refresh the current order table (it should be empty now)
+            // Optionally, switch to the AllOrders view or notify the user
+            mainController.updateAllOrdersView();
+        }
     }
 
     @FXML

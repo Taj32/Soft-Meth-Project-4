@@ -45,7 +45,7 @@ public class Donut extends MenuItem{
     public String toString(){
         String amount = String.valueOf(quantity);
 
-        return "("+amount+")";
+        return flavor+"("+amount+")";
     }
 
     public String getType() {

@@ -94,7 +94,7 @@ public class coffeeController {
     }
 
     private void updateCoffeeTotal() {
-        coffeePrice.setText("$" + currentCoffee.price());
+        coffeePrice.setText(String.format("$%.2f",currentCoffee.price()));
     }
 
     @FXML

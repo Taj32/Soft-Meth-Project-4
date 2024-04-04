@@ -90,7 +90,7 @@ public class View1Controller {
             int amount = Integer.parseInt(quantity);
             Donut order = new Donut(type, flavor, amount);
 
-            orderList.add(flavor + order.toString());
+            orderList.add(flavor + "("+amount+")");
 
             donutOrderList.add(order);
             updateDonutTotal();
@@ -123,7 +123,7 @@ public class View1Controller {
         for (Donut donut : donutOrderList) {
             total += donut.price();
         }
-        donutTotal.setText("$" + String.valueOf(total));
+        donutTotal.setText(String.format("$%.2f",total));
 
     }
 

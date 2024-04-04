@@ -1,5 +1,6 @@
 package com.example.softmethproject4new;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,18 +16,13 @@ public class AllOrdersController {
     private Stage stage;
     private Scene primaryScene;
     private Stage primaryStage;
-    private ObservableList<String> colorList;
-    private ObservableList<String> fruitList;
+
     @FXML
-    private Label value;
+    private ListView<String> orderListView;
+
     @FXML
-    private Label color;
-    @FXML
-    private ComboBox<String> cmb_color;
-    @FXML
-    private ListView<String> listview;
-    @FXML
-    private Button menuButton;
+    private ComboBox<String> orderNumbers;
+
 
     public void setMainController (MainController controller,
                                    Stage stage,
@@ -36,6 +32,27 @@ public class AllOrdersController {
         this.stage = stage;
         this.primaryStage = primaryStage;
         this.primaryScene = primaryScene;
+
+    }
+
+
+    public void updateListView() {
+        ObservableList<String> ordersDescriptions = FXCollections.observableArrayList();
+        for (Order order : mainController.getAllOrders()) {
+            ordersDescriptions.add(order.toString());
+        }
+        orderListView.setItems(ordersDescriptions);
+    }
+
+
+    public void populateOrderNumbers() {
+        ObservableList<String> numbers = FXCollections.observableArrayList();
+        for (Order order : mainController.getAllOrders()) {
+            // Assuming getOrderNumber() returns an int or String you can directly use
+            String orderNumberStr = String.valueOf(order.getOrderNumber());
+            numbers.add(orderNumberStr);
+        }
+        orderNumbers.setItems(numbers);
     }
 
     @FXML

@@ -33,4 +33,18 @@ public class Coffee extends MenuItem{
         return totalPrice;
 
     }
+
+    @Override
+    public String toString(){
+        String addOnsString = String.join(", ", addIns);
+        if (addIns.isEmpty()){
+            return "coffee(" + quantity +") " + size;
+        } else return "coffee(" + quantity +") " + size + "["+ addOnsString + "]";
+
+
+
+    }
+
+
+
 }
