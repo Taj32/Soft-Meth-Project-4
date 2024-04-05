@@ -148,7 +148,7 @@ public class AllOrdersController {
 
 
     @FXML
-    protected void returnToMain() {
+    private void returnToMain() {
         Stage mainView = new Stage();
         VBox root;
         try { //it is possible to have an IOException because of the errors in the fxml file

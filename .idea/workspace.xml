@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caec1e25-5260-4954-96d5-ca7bcc1b056e" name="Changes" comment="Trouble Shooting">
+    <list default="true" id="caec1e25-5260-4954-96d5-ca7bcc1b056e" name="Changes" comment="Project should work completely now.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/SandwichTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/AllOrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/AllOrdersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/CurrentOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/CurrentOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/Donut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/Donut.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/Sandwich.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/SandwichController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/SandwichController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/View1Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/View1Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/coffeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/softmethproject4new/coffeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/all-orders-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/all-orders-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/coffee-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/coffee-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/donut-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/donut-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/sandwich-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/softmethproject4new/sandwich-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,19 +73,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/Desktop/Software_Methodology/demoMoreFX&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.HelloApplication.executor": "Run",
+    "Application.Main.executor": "Run",
+    "JUnit.SandwichTest.TestChickenSandwich.executor": "Run",
+    "JUnit.SandwichTest.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/andre/Desktop/Software_Methodology/demoMoreFX"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\tajvi\IdeaProjects\Soft-Meth-Project-4-NEW\src\main\resources\com\example\softmethproject4new" />
@@ -96,6 +95,62 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.softmethproject4new" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.SandwichTest">
+    <configuration name="SandwichTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Soft-Meth-Project-4-NEW" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.softmethproject4new.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.softmethproject4new" />
+      <option name="MAIN_CLASS_NAME" value="com.example.softmethproject4new.SandwichTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SandwichTest.TestChickenSandwich" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Soft-Meth-Project-4-NEW" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.softmethproject4new.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.softmethproject4new" />
+      <option name="MAIN_CLASS_NAME" value="com.example.softmethproject4new.SandwichTest" />
+      <option name="METHOD_NAME" value="TestChickenSandwich" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SandwichTest.testChickenSandwich_WithNonCheeseAddOns" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Soft-Meth-Project-4-NEW" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.softmethproject4new.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.softmethproject4new" />
+      <option name="MAIN_CLASS_NAME" value="com.example.softmethproject4new.SandwichTest" />
+      <option name="METHOD_NAME" value="testChickenSandwich_WithNonCheeseAddOns" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SandwichTest" />
+        <item itemvalue="JUnit.SandwichTest.testChickenSandwich_WithNonCheeseAddOns" />
+        <item itemvalue="JUnit.SandwichTest.TestChickenSandwich" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -153,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712089969652</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Project should work completely now.">
+      <option name="closed" value="true" />
+      <created>1712274701623</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712274701623</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,6 +274,7 @@
     <MESSAGE value="Finished Starting page" />
     <MESSAGE value="need to add" />
     <MESSAGE value="Trouble Shooting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trouble Shooting" />
+    <MESSAGE value="Project should work completely now." />
+    <option name="LAST_COMMIT_MESSAGE" value="Project should work completely now." />
   </component>
 </project>

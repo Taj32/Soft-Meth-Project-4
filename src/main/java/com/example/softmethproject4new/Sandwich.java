@@ -48,21 +48,21 @@ public class Sandwich extends MenuItem {
 
     }
 
-    public String getProtein() {
-        return protein;
-    }
-
-    public String getBread() {
-        return bread;
-    }
-
-    public void setBread(String bread) {
-        this.bread = bread;
-    }
-
-    public void setProtein(String protein) {
-        this.protein = protein;
-    }
+//    public String getProtein() {
+//        return protein;
+//    }
+//
+//    public String getBread() {
+//        return bread;
+//    }
+//
+//    public void setBread(String bread) {
+//        this.bread = bread;
+//    }
+//
+//    public void setProtein(String protein) {
+//        this.protein = protein;
+//    }
 
     @Override
     public String toString(){

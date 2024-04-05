@@ -17,18 +17,6 @@ public class coffeeController {
     private Stage stage;
     private Scene primaryScene;
     private Stage primaryStage;
-    private ObservableList<String> colorList;
-    private ObservableList<String> fruitList;
-    @FXML
-    private Label value;
-    @FXML
-    private Label color;
-    @FXML
-    private ComboBox<String> cmb_color;
-    @FXML
-    private ListView<String> listview;
-    @FXML
-    private Button menuButton;
 
     @FXML
     private ComboBox<String> cb_size;
@@ -37,7 +25,6 @@ public class coffeeController {
 
     @FXML
     private TextArea coffeePrice;
-
     private ArrayList<String> addins;
 
     private Coffee currentCoffee;
@@ -64,7 +51,7 @@ public class coffeeController {
     }
 
     @FXML
-    protected void addCoffee() {
+    private void addCoffee() {
         String size = cb_size.getSelectionModel().getSelectedItem();
         String quantity = cb_quantity.getSelectionModel().getSelectedItem();
         if(currentCoffee != null) {
@@ -100,30 +87,28 @@ public class coffeeController {
     @FXML
     CheckBox box5;
 
-    private void reset(){
-        box1.setSelected(false);
-        box2.setSelected(false);
-        box3.setSelected(false);
-        box4.setSelected(false);
-        box5.setSelected(false);
-
-        // Clear the addins list
-        addins.clear();
-
-        String size = cb_size.getSelectionModel().getSelectedItem();
-        String quantity = cb_quantity.getSelectionModel().getSelectedItem();
-
-        if(size != null && quantity != null) {
-            //calculate the cost
-            int amount = Integer.parseInt(quantity);
-            currentCoffee = new Coffee(size, amount, addins);
-            updateCoffeeTotal();
-
-        }
-
-
-
-    }
+//    private void reset(){
+//        box1.setSelected(false);
+//        box2.setSelected(false);
+//        box3.setSelected(false);
+//        box4.setSelected(false);
+//        box5.setSelected(false);
+//
+//        // Clear the addins list
+//        addins.clear();
+//
+//        String size = cb_size.getSelectionModel().getSelectedItem();
+//        String quantity = cb_quantity.getSelectionModel().getSelectedItem();
+//
+//        if(size != null && quantity != null) {
+//            //calculate the cost
+//            int amount = Integer.parseInt(quantity);
+//            currentCoffee = new Coffee(size, amount, addins);
+//            updateCoffeeTotal();
+//
+//        }
+//
+//    }
 
     public void coffeeOrder(ActionEvent event) {
         String size = cb_size.getSelectionModel().getSelectedItem();
@@ -136,8 +121,6 @@ public class coffeeController {
             updateCoffeeTotal();
 
         }
-
-//        System.out.println(size);
     }
 
     private void updateCoffeeTotal() {
@@ -172,7 +155,7 @@ public class coffeeController {
     }
 
     @FXML
-    protected void returnToMain() {
+    private void returnToMain() {
         Stage mainView = new Stage();
         VBox root;
         try { //it is possible to have an IOException because of the errors in the fxml file

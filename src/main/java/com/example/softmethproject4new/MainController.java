@@ -58,7 +58,7 @@ public class MainController {
      * method.
      */
     @FXML
-    protected void displayView1() {
+    private void displayView1() {
         Stage view1 = new Stage();
         AnchorPane root;
         try { //it is possible to have an IOException because of the errors in the fxml file
@@ -187,10 +187,6 @@ public class MainController {
      *
      * @return
      */
-    public int getValue() {
-        return value;
-    }
-
     public void setValue() {
         this.value -= 1;
     }
@@ -203,23 +199,23 @@ public class MainController {
         return cart;
     }
 
-    public List<Order> getOrders() {
-        return allOrders;
-    }
+//    public List<Order> getOrders() {
+//        return allOrders;
+//    }
 
 
     public void addOrder(Order order) {
-        printAllOrders();
+//        printAllOrders();
         allOrders.add(order);
-        printAllOrders();
+//        printAllOrders();
     }
 
     //Here for testing..
-    public void printAllOrders() {
-        for(Order singleOrder : allOrders) {
-//            System.out.println(singleOrder);
-        }
-    }
+//    public void printAllOrders() {
+//        for(Order singleOrder : allOrders) {
+////            System.out.println(singleOrder);
+//        }
+//    }
     public List<Order> getAllOrders() {
         return allOrders;
     }

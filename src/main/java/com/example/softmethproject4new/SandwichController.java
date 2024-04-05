@@ -19,19 +19,14 @@ public class SandwichController {
     private Scene primaryScene;
     private Stage primaryStage;
     private ArrayList<String> addOns;
-    private ObservableList<String> fruitList;
     private Sandwich currentSandwich;
 
 
     @FXML
-    ToggleGroup proteinType;
+    private ToggleGroup proteinType;
 
     @FXML
-    ToggleGroup breadType;
-
-    @FXML
-    CheckBox lettuceOption;
-
+    private ToggleGroup breadType;
 
     @FXML
     private TextArea sandwichPrice;
@@ -55,9 +50,7 @@ public class SandwichController {
 //        System.out.println(mainController.getValue());
 
     }
-//    ListView<String> sandwichOrders;
-//
-//    private ObservableList<String> orderList = FXCollections.observableArrayList();
+
 
 
     @FXML
@@ -105,7 +98,7 @@ public class SandwichController {
     private Button button2;
 
     @FXML
-    protected void addSandwich() {
+    private void addSandwich() {
         RadioButton bread = (RadioButton) breadType.getSelectedToggle();
         RadioButton protein = (RadioButton) proteinType.getSelectedToggle();
         if(currentSandwich != null) {
@@ -125,7 +118,7 @@ public class SandwichController {
     }
 
     @FXML
-    protected void returnToMain() {
+    private void returnToMain() {
         Stage mainView = new Stage();
         VBox root;
         try { //it is possible to have an IOException because of the errors in the fxml file

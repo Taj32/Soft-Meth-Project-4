@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class View1Controller {
+public class View1Controller { //MUST ADD THIS
     private MainController mainController;
     private Stage stage;
     private Scene primaryScene;
@@ -43,7 +43,7 @@ public class View1Controller {
     public void setMainController(MainController controller,
                                   Stage stage,
                                   Stage primaryStage,
-                                  Scene primaryScene) {
+                                  Scene primaryScene) { //MUST ADD THIS
         mainController = controller;
         this.stage = stage;
         this.primaryStage = primaryStage;
@@ -73,7 +73,7 @@ public class View1Controller {
 
 
 
-    public void initialize() {
+    public void initialize() { //MUST ADD THIS
 
         cb_donutType.getItems().addAll("Yeast", "Cake", "Donut Holes");
         cb_quantity.getItems().addAll("1", "2", "3", "4", "5");
@@ -89,7 +89,7 @@ public class View1Controller {
 
     }
 
-    public void updateImage(String type){
+    private void updateImage(String type){
         switch (type){
             case "Yeast":
                 donutImage.setImage(yeast);
@@ -103,14 +103,14 @@ public class View1Controller {
         }
     }
 
-    public void updateFlavors(String type) {
+    private void updateFlavors(String type) {
         List<String> flavors = Donut.typeOfFlavors(type);
 
         ObservableList<String> obsFlavors = FXCollections.observableArrayList(flavors);
         differentFlavors.setItems(obsFlavors);
     }
 
-    public void donutOrder(ActionEvent event) {
+    public void donutOrder(ActionEvent event) { //MUST ADD THIS
         String flavor = differentFlavors.getSelectionModel().getSelectedItem();
         String quantity = cb_quantity.getSelectionModel().getSelectedItem();
         String type = cb_donutType.getSelectionModel().getSelectedItem();
@@ -129,7 +129,7 @@ public class View1Controller {
         }
 
     }
-    public void removeDonutOrder(ActionEvent event) {
+    public void removeDonutOrder(ActionEvent event) { //MUST ADD THIS
         int selectedIndex = donutOrders.getSelectionModel().getSelectedIndex();
         if (selectedIndex >= 0) {
             // Remove the selected order from both lists
@@ -159,7 +159,7 @@ public class View1Controller {
     }
 
     @FXML
-    protected void returnToMain() {
+    private void returnToMain() {
         Stage mainView = new Stage();
         VBox root;
         try { //it is possible to have an IOException because of the errors in the fxml file
@@ -183,7 +183,7 @@ public class View1Controller {
     }
 
     @FXML
-    protected void addDonuts() {
+    private void addDonuts() {
         if(!donutOrderList.isEmpty()) {
             for(Donut individualDonut : donutOrderList) {
                 mainController.addToCart(individualDonut);
