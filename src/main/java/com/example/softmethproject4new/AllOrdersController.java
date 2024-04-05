@@ -127,7 +127,7 @@ public class AllOrdersController {
                     writer.println("Item: " + item.toString() + ", Price: $" + String.format("%.2f", item.price()));
                 }
                 double total = selectedOrder.calculateTotal();
-                double tax = total * 0.0625;
+                double tax = total * 0.06625;
                 total += tax;
                 writer.println("Subtotal: $" + String.format("%.2f", selectedOrder.calculateTotal()));
                 writer.println("Tax: $" + String.format("%.2f", tax));

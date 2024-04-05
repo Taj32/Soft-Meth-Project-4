@@ -111,7 +111,7 @@ public class CurrentOrderController {
             sub += element.price();
         }
 
-        taxTotal = sub * 0.0625;
+        taxTotal = sub * 0.06625;
         grandTotal = sub + taxTotal;
 
         subTotal.setText(String.format("$%.2f",sub));
